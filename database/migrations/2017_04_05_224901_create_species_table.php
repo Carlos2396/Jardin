@@ -19,7 +19,7 @@ class CreateSpeciesTable extends Migration
             $table->text('description');
             $table->text('special_care');
             $table->float('precio', 7, 2);
-            $table->integer('gender__id')->unsigned();
+            $table->integer('gender_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('gender_id')->references('id')->on('genders')->onUpdate('cascade')->onDelete('cascade');
