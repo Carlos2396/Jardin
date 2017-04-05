@@ -15,7 +15,14 @@ class CreateSpeciesTable extends Migration
     {
         Schema::create('species', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->text('description');
+            $table->text('special_care');
+            $table->float('precio', 7, 2);
+            $table->integer('gender__id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('gender_id')->references('id')->on('genders')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
