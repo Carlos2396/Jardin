@@ -15,7 +15,11 @@ class CreateNamesTable extends Migration
     {
         Schema::create('names', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->integer('specie_id')->unsigned();
             $table->timestamps();
+
+             $table->foreign('specie_id')->references('id')->on('species')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
