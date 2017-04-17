@@ -1,23 +1,20 @@
 @extends('layouts.master')
 
 @section('title')
-    Especies
+    Clases
 @endsection
 
 @section('content')
-
-    @section('specie_sidebar')
-        @include('layouts.specie_sidebar')
-    @endsection
 
     @include('layouts.sidebar')
 
     <div class="col-sm-9">
 
-        <p class="text-muted lead">Nuestro herbario de especies es propio de la región de Cholula en Puebla, contamos con más de 100 especies ...</p>
+        <p class="text-muted lead">Descripción de las clases</p>
 
         <div class="row products">
 
+            foreach
             <div class="col-md-4 col-sm-6">
                 <div class="product">
                     <div class="image">
@@ -28,7 +25,6 @@
                     <!-- /.image -->
                     <div class="text">
                         <h3><a href="shop-detail.html">Fur coat with very but very very long name</a></h3>
-                        <p class="price">$143.00</p>
                         <p class="buttons">
                             <a href="shop-detail.html" class="btn btn-default">View detail</a>
                             <a href="shop-basket.html" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i>Add to cart</a>
