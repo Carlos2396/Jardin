@@ -23,9 +23,7 @@ Route::get('/especies/show1', function () {
     return view('specie.show1');
 });
 
-Route::get('/clases', function () {
-    return view('class.index');
-});
+Route::get('/clases', 'ClassController@index');
 
 Route::get('/ordenes', function () {
     return view('specie.index');

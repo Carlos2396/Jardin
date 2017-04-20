@@ -6,11 +6,7 @@
 
 @section('content')
 
-    @section('specie_sidebar')
-        @include('layouts.specie_sidebar')
-    @endsection
-
-    @include('layouts.sidebar')
+    @include('specie.specie_sidebar')
 
     <div class="col-sm-9">
 

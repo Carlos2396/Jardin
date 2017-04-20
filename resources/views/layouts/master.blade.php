@@ -62,7 +62,8 @@ _________________________________________________________ -->
             <!-- *** NAVBAR END *** -->
 
         </header>
-
+        
+        @include('layouts.navbar')
         @include('layouts.title')
 
         <div id="content">

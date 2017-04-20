@@ -5,10 +5,7 @@ Jardín Etnobotánico Franciso Peláez R. - Herbario
 @endsection
 
 @section('content')
-
-    @include('layouts.sidebar')
-    <div class="col-md-1"></div>
-    <div class="col-md-8">
+    <div class="col-md-12&nbsp;">
         <h3>Nombre científico de la especie</h3>
         <p class="lead">Descripción de la planta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus ut elit a cursus. Ut eleifend imperdiet nisi in ultricies. Morbi euismod sed lectus ut tincidunt. Etiam ultrices sem sed lacus hendrerit, id venenatis lacus accumsan. Donec non sapien sed augue commodo interdum. Donec accumsan ex ut urna condimentum, vel venenatis felis tincidunt. Ut felis ante, blandit vel mi et, iaculis accumsan nisi. Nulla orci erat, ornare eu finibus vitae, tincidunt eu tortor. Nulla posuere nisl leo, eget vulputate ante mollis a.
         </p>
