@@ -8,6 +8,8 @@ use App\Order;
 
 class Family extends Model
 {
+    protected $fillable= ['name', 'description', 'order_id'];
+    
     public function order(){
         return $this->belongsTo(Order::class);
     }

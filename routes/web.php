@@ -32,3 +32,9 @@ Route::get('/ordenes', function () {
 Route::get('/familias', function () {
     return view('specie.index');
 });
+
+Route::get('/ordenes/crear', 'OrderController@create');
+
+Route::get('/familias/crear', 'FamilyController@create');
+
+Route::post('/familias/crear', 'FamilyController@store');
