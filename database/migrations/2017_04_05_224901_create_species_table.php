@@ -17,8 +17,8 @@ class CreateSpeciesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('description');
-            $table->text('special_care');
-            $table->float('precio', 7, 2);
+            $table->text('especial_care');
+            $table->float('price', 7, 2);
             $table->integer('gender_id')->unsigned();
             $table->timestamps();
 
