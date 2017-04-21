@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use App\Gender;
 
 
-class Class extends Model
+class Classs extends Model
 {
+    protected $table = 'classes';
+
     public function orders(){
         return $this->hasMany(Gender::class);
     }
