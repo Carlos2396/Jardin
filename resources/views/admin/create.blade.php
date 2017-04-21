@@ -24,12 +24,12 @@ Crear
                             </ul>
                             <div class="tab-content tab-content-inverse">
                                 <div class="tab-pane active" id="clase">
-                                   
+                                   @include('class.create')
                                 </div>
                                 <!-- /.tab -->
 
                                 <div class="tab-pane" id="orden">
-                                    
+                                    @include('order.create')
                                 </div>
                                 <!-- /.tab -->
 
@@ -44,17 +44,17 @@ Crear
                                 <!-- /.tab -->
 
                                 <div class="tab-pane" id="especie">
-
+                                    @include('specie.create')
                                 </div>
                                 <!-- /.tab -->
 
                                 <div class="tab-pane" id="color">
-
+                                    @include('color.create')
                                 </div>
                                 <!-- /.tab -->
 
                                 <div class="tab-pane" id="etiqueta">
-
+                                    @include('label.create')
                                 </div>
                                 <!-- /.tab -->
                             </div>
