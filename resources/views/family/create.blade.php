@@ -8,7 +8,7 @@
     </div>
 
     <div class="form-group">
-        <label for="name">Nombre</label>
+        <label for="name">Descripción</label>
         <textarea class="form-control" id="description" name="description" required></textarea>
     </div>
 

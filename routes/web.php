@@ -30,10 +30,11 @@ Route::get('/generos/crear', 'FamilyController@create');
 Route::post('/generos/crear', 'FamilyController@store');
 
 Route::get('/crear', function() {
-    $classs = App\Classs::all();
+    $classes = App\Classs::all();
     $orders = App\Order::all();
     $families = App\Family::all();
     $genders = App\Gender::all();
+    $species = App\Gender::all();
 
-    return view('admin.create', compact('classs' ,'orders', 'families', 'genders'));
+    return view('admin.create', compact('classes' ,'orders', 'families', 'genders', 'species'));
 });
