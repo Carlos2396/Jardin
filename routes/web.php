@@ -35,6 +35,8 @@ Route::get('/familias', function () {
 
 Route::get('/ordenes/crear', 'OrderController@create');
 
+Route::get('/ordenes/crear', 'OrderController@store');
+
 Route::get('/familias/crear', 'FamilyController@create');
 
 Route::post('/familias/crear', 'FamilyController@store');
