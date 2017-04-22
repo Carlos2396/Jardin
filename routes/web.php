@@ -17,17 +17,15 @@ Route::get('/', function() {
 Route::get('/especies', 'SpecieController@index');
 Route::get('/especies/{specie}', 'SpecieController@show');
 
-Route::get('/clases/crear', 'ClaseController@index');
-Route::post('/clases/crear', 'ClaseController@index');
+Route::post('/clases/crear', 'ClaseController@store');
 
-Route::get('/ordenes/crear', 'OrderController@create');
 Route::post('/ordenes/crear', 'OrderController@store');
 
-Route::get('/familias/crear', 'FamilyController@create');
 Route::post('/familias/crear', 'FamilyController@store');
 
-Route::get('/generos/crear', 'GenderController@create');
 Route::post('/generos/crear', 'GenderController@store');
+
+Route::post('/especies/crear', 'SpecieController@store');
 
 Route::get('/crear', function() {
     $classes = App\Clase::all();
