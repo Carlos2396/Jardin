@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order;
+use App\Clase;
 
 class OrderController extends Controller
 {
@@ -18,12 +20,12 @@ class OrderController extends Controller
             'description' => 'required'
         ]);
 
-        Family::create([
+        Order::create([
             'name' => request('name'),
             'description'=> request('description'),
-            'order_id' => request('order')
+            'class_id' => request('class')
         ]);
 
-        return redirect('/orders/crear');        
+        return redirect('/crear');        
     }
 }

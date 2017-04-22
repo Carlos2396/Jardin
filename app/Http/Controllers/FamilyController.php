@@ -25,6 +25,6 @@ class FamilyController extends Controller
             'order_id' => request('order')
         ]);
 
-        return redirect('/familias/crear');        
+        return redirect('/crear');        
     }
 }

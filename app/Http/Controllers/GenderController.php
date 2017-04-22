@@ -29,9 +29,9 @@ class GenderController extends Controller
             'light_care' => request('light_care'),
             'temp_care' => request('temp_care'),
             'name' => request('name'),
-            'order_id' => request('order')
+            'family_id' => request('family')
         ]);
 
-        return redirect('/genders/crear');        
+        return redirect('/crear');        
     }
 }

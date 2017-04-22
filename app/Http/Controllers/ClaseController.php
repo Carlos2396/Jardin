@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Clase;
 
 class ClaseController extends Controller
 {
@@ -18,12 +19,11 @@ class ClaseController extends Controller
             'description' => 'required'
         ]);
 
-        Order::create([
+        Clase::create([
             'name' => request('name'),
             'description'=> request('description'),
-            'clase_id' => request('clase')
         ]);
 
-        return redirect('/clases/crear');        
+        return redirect('/crear');        
     }
 }
