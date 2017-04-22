@@ -11,6 +11,10 @@ class ImagesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+         DB::table('species')->insert([
+        	'name'=>'rosaCalifornicaPrincipal',
+            'path' =>'img/species/',
+            'specie_id' =>1,
+        ]);
     }
 }
