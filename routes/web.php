@@ -26,8 +26,8 @@ Route::post('/ordenes/crear', 'OrderController@store');
 Route::get('/familias/crear', 'FamilyController@create');
 Route::post('/familias/crear', 'FamilyController@store');
 
-Route::get('/generos/crear', 'FamilyController@create');
-Route::post('/generos/crear', 'FamilyController@store');
+Route::get('/generos/crear', 'GenderController@create');
+Route::post('/generos/crear', 'GenderController@store');
 
 Route::get('/crear', function() {
     $classes = App\Clase::all();
