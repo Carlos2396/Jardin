@@ -22,6 +22,6 @@
     </div>
 
     <div class="text-center">
-        <button type="submit" class="btn btn-template-main"><i class="fa fa-user-md"></i>Registrarme</button>
+        <button type="submit" class="btn btn-template-main"><i class="fa fa-user-md"></i>Crear</button>
     </div>
 </form>
