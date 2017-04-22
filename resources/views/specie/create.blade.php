@@ -14,14 +14,14 @@
         </div>
     </div>
 
-    <dic class="col-sm-4">
+    <div class="col-sm-4">
         <div class="form-group">
             <label for="name">Nombre</label>
             <input type="text" class="form-control" id="name" name="name" required>
         </div>
     </div>
 
-    <dic class="col-sm-4">
+    <div class="col-sm-4">
         <div class="form-group">
             <label for="price">Precio</label>
             <input type="number" step="0.10" min="0" max="99999" class="form-control" id="price" name="price" required>
