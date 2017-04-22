@@ -11,7 +11,7 @@
 
     <div class="col-sm-4">
         <div class="form-group">
-            <label for="price">Precio</label>
+            <label for="price">Precio ($MXN) </label>
             <input type="number" step="0.10" min="0" max="99999" class="form-control" id="price" name="price" required>
         </div>
     </div>
@@ -40,6 +40,30 @@
         <textarea class="form-control" id="special_care" name="special_care" required>
         </textarea>
     </div>
+
+    <table>
+        <tr>
+            <th>Color</th>
+            <th>Cantidad</th>
+            <th> </th>
+        </tr>
+        <tr>
+            <td>
+                <select class="form-control" id="color" name="color">
+                    <option value="0">Selecciona</option>
+                    @foreach($colors as $color)
+                        <option value="{{$color->id}}">{{$color->name}}</option>
+                    @endforeach
+                </select>
+            </td>
+            <td>
+                <input type="number" step="1" min="0" max="10000" class="form-control" id="quantity" name="quantity" required>
+            </td>
+            <td>
+                <button type="submit" class="btn btn-template-main">Eliminar</button>
+            </td>
+        </tr>
+    </table>
 
     <div class="text-center">
         <button type="submit" class="btn btn-template-main"><i class="fa fa-user-md"></i>Crear</button>
