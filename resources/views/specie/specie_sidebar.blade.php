@@ -8,8 +8,8 @@
         <div class="panel-body">
             <form>
                 <div class="form-group">
-                    <label>Clase&nbsp;&nbsp;&nbsp;&nbsp;
-                        <select>
+                    <label for="class">Clase&nbsp;&nbsp;&nbsp;&nbsp;
+                        <select class="form-control" id="class" name="class">
                             <option value="volvo">Todas</option>
                             <option value="saab">Clase 2</option>
                         </select>
