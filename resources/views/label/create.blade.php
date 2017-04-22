@@ -19,17 +19,16 @@
                 <button type="button" class="btn btn-template-main">Buscar</button>
             </div>
         </div>
+
         <hr>
-    </div>
-    
-    <div class="form-group">
-                @foreach($species as $specie)
-                    <div class="col-md-3">
-                        <label for="checkbox">{{$specie->name}}
-                            <input type="checkbox" name="{{$specie->id}}" value="1"><br>
-                        </label>
-                    </div>
-                @endforeach
+        
+        @foreach($species as $specie)
+            <div class="col-md-3">
+                <label for="checkbox">{{$specie->name}}
+                    <input type="checkbox" name="{{$specie->id}}" value="1"><br>
+                </label>
+            </div>
+        @endforeach
     </div>
      
 
