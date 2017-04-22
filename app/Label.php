@@ -7,6 +7,8 @@ use App\Specie;
 
 class Label extends Model
 {
+    protected $fillable= ['name'];
+
     public function species(){
         return $this->belongsToMany(Specie::class);
     }

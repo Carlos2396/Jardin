@@ -8,6 +8,8 @@ use App\Family;
 
 class Gender extends Model
 {
+    protected $fillable= ['name', 'description', 'family_id'];
+
     public function family(){
         return $this->belongsTo(Family::class);
     }

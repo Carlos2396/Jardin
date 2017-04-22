@@ -11,6 +11,8 @@ use App\Image;
 
 class Specie extends Model
 {
+    protected $fillable= ['name', 'description', 'especial_care', 'price', 'gender_id'];
+
     public function gender(){
         return $this->belongsTo(Gender::class);
     }
