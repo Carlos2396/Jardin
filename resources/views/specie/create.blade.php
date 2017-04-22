@@ -1,18 +1,6 @@
 <form action="/especies/crear" method="POST">
     {{ csrf_field() }}
     
-    <div class="col-sm-4">
-        <div class="form-group">
-            <label for="gender">Género
-                <select class="form-control" id="gender" name="gender">
-                    <option value="0">Selecciona</option>
-                    @foreach($genders as $gender)
-                        <option value="{{$gender->id}}">{{$gender->name}}</option>
-                    @endforeach
-                </select>
-            </label>
-        </div>
-    </div>
 
     <div class="col-sm-4">
         <div class="form-group">
@@ -25,6 +13,19 @@
         <div class="form-group">
             <label for="price">Precio</label>
             <input type="number" step="0.10" min="0" max="99999" class="form-control" id="price" name="price" required>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="form-group">
+            <label for="gender">Género
+                <select class="form-control" id="gender" name="gender">
+                    <option value="0">Selecciona</option>
+                    @foreach($genders as $gender)
+                        <option value="{{$gender->id}}">{{$gender->name}}</option>
+                    @endforeach
+                </select>
+            </label>
         </div>
     </div>
 
