@@ -41,29 +41,33 @@
         </textarea>
     </div>
 
-    <table>
-        <tr>
-            <th>Color</th>
-            <th>Cantidad</th>
-            <th> </th>
-        </tr>
-        <tr>
-            <td>
-                <select class="form-control" id="color" name="color">
-                    <option value="0">Selecciona</option>
-                    @foreach($colors as $color)
-                        <option value="{{$color->id}}">{{$color->name}}</option>
-                    @endforeach
-                </select>
-            </td>
-            <td>
-                <input type="number" step="1" min="0" max="10000" class="form-control" id="quantity" name="quantity" required>
-            </td>
-            <td>
-                <button type="submit" class="btn btn-template-main">Eliminar</button>
-            </td>
-        </tr>
-    </table>
+    <div class="box">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th># 1735</th>
+                        <td>22/06/2013</td>
+                        <td>$ 150.00</td>
+                        <td><span class="label label-info">Being prepared</span>
+                        </td>
+                        <td><a href="customer-order.html" class="btn btn-template-main btn-sm">View</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.table-responsive -->
+
+    </div>
+                        <!-- /.box -->
 
     <div class="text-center">
         <button type="submit" class="btn btn-template-main"><i class="fa fa-user-md"></i>Crear</button>
