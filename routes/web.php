@@ -17,8 +17,8 @@ Route::get('/', function() {
 Route::get('/especies', 'SpecieController@index');
 Route::get('/especies/{specie}', 'SpecieController@show');
 
-Route::get('/clases/crear', 'ClassController@index');
-Route::post('/clases/crear', 'ClassController@index');
+Route::get('/clases/crear', 'ClaseController@index');
+Route::post('/clases/crear', 'ClaseController@index');
 
 Route::get('/ordenes/crear', 'OrderController@create');
 Route::post('/ordenes/crear', 'OrderController@store');
