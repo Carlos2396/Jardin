@@ -2,6 +2,18 @@
 <form action="/generos/crear" method="POST">
 
     {{ csrf_field() }}
+
+    <div class="form-group">
+        <label for="family">Familia
+            <select class="form-control" id="family" name="family">
+                <option value="0">Selecciona</option>
+                @foreach($families as $family)
+                    <option value="{{$family->id}}">{{$family->name}}</option>
+                @endforeach
+            </select>
+        </label>
+    </div>
+
     <div class="form-group">
         <label for="name">Nombre</label>
         <input type="text" class="form-control" id="name" name="name" required>
@@ -29,15 +41,6 @@
         <label for="temp_care">Cuidados con respecto a la temperatura</label>
         <textarea <textarea class="form-control" id="temp_care" name="temp_care" required>
         </textarea>
-    </div>
-    <div class="form-group">
-        <label for="family">Familia
-            <select class="form-control" id="family" name="family">
-                @foreach($families as $family)
-                    <option value="{{$family->id}}">{{$family->name}}</option>
-                @endforeach
-            </select>
-        </label>
     </div>
 
     <div class="text-center">
