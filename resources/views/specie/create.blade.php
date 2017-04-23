@@ -37,42 +37,14 @@
         </textarea>
     </div>
 
-    <div class="row">
-        <div class="col-sm-6">
+    <div class="form-group">
             <label for="special_care">Cuidados especiales</label>
             <textarea class="form-control" id="special_care" name="special_care" required>
             </textarea>
-        </div>
-
-        <div class="col-sm-6">
-            <fieldset>
-                <legend>Nombres coloquiales</legend>
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="text" class="form-control" name="coloquial" required></td>
-                                <td><a class="btn btn-xs btn-danger" onclick="">Eliminar</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </fieldset>
-            <div class="text-center">
-                <button type="button" class="btn btn-xs btn-success">Agregar nombre</button>
-            </div>
-        </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <fieldset>
                 <legend>Inventario</legend>
                 <div class="table-responsive">
@@ -107,7 +79,33 @@
             </div>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-4">
+            <fieldset>
+                <legend>Nombres coloquiales</legend>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" class="form-control" name="coloquial" required></td>
+                                <td><a class="btn btn-xs btn-danger" onclick="">Eliminar</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+            <div class="text-center">
+                <button type="button" class="btn btn-xs btn-success">Agregar nombre</button>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
             <fieldset>
                 <legend>Imágenes</legend>
                 <div class="table-responsive">
