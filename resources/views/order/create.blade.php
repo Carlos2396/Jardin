@@ -23,6 +23,6 @@
     </div>
 
     <div class="text-center">
-        <button type="submit" class="btn btn-template-main"><i class="fa fa-user-md"></i>Crear</button>
+        <button type="submit" class="btn btn-template-main">Crear</button>
     </div>
 </form>

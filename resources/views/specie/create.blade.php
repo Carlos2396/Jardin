@@ -1,6 +1,51 @@
+<script>
+    var nameCount = 1;
+    var colorCount = 1;
+
+    function addName(){
+        var table = document.getElementById("namesTable");
+        var row = table.insertRow();
+        var nameCell = row.insertCell(0);
+        nameCell.innerHTML = "<input type=\"text\" placeholder=\"Nombre\" class=\"form-control\" name=\"coloquial_"+nameCount+"\" required>";
+        nameCount++;
+    }
+
+    function removeName(){
+        var table = document.getElementById("namesTable");
+        table.deleteRow(nameCount);
+
+        if(nameCount > 0)
+            nameCount--;
+    }
+
+    function addColor(){
+        var colorshtml = document.getElementById("colorsSelect").parentElement.innerHTML;
+        var table = document.getElementById("colorsTable");
+        var row = table.insertRow();
+        var colorCell = row.insertCell(0);
+        var quantityCell = row.insertCell(1);
+        
+        quantityCell.innerHTML = "<input type=\"number\" step=\"1\" min=\"0\" max=\"10000\" class=\"form-control\" style=\"width: 110px;\" name=\"quantity_"+colorCount+"\" required>";
+        colorCell.innerHTML = colorshtml;
+
+        var colorSelect = colorCell.firstElementChild;
+        colorSelect.name = "color_" + colorCount;
+       
+        colorCount++;
+    }
+
+    function removeColor(){
+        if(colorCount > 1){
+            var table = document.getElementById("colorsTable");
+            table.deleteRow(colorCount);
+            colorCount--;
+        }
+    }
+
+</script>
+
 <form action="/especies/crear" method="POST">
     {{ csrf_field() }}
-    
 
     <div class="row">
         <div class="col-sm-4">
@@ -33,76 +78,70 @@
 
     <div class="form-group">
         <label for="name">Descripción</label>
-        <textarea class="form-control" id="description" name="description" required>
-        </textarea>
+        <textarea class="form-control" id="description" name="description" required></textarea>
     </div>
 
     <div class="form-group">
             <label for="special_care">Cuidados especiales</label>
-            <textarea class="form-control" id="special_care" name="special_care" required>
-            </textarea>
+            <textarea class="form-control" id="special_care" name="special_care" required></textarea>
     </div>
 
     <div class="row">
         <div class="col-sm-4">
             <fieldset>
+                <legend>Nombres coloquiales</legend>
+                <div class="table-responsive">
+                    <table class="table table-hover" id="namesTable">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>
+                                    <button type="button" class="btn btn-xs btn-success" onclick="addName()">+</button>
+                                    <button type="button"  class="btn btn-xs btn-danger" onclick="removeName()">-</button>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" placeholder="Nombre" class="form-control" name="coloquial_0" required></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="col-sm-4">
+            <fieldset>
                 <legend>Inventario</legend>
                 <div class="table-responsive">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="colorsTable">
                         <thead>
                             <tr>
                                 <th>Color</th>
                                 <th>Cantidad</th>
-                                <th></th>
+                                <th>
+                                    <button type="button" class="btn btn-xs btn-success" onclick="addColor()">+</button>
+                                    <button type="button"  class="btn btn-xs btn-danger" onclick="removeColor()">-</button>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>
-                                    <select class="form-control" id="order" name="order">
+                                    <select class="form-control" id="colorsSelect" name="color_0">
                                         <option value="0">Selecciona</option>
                                         @foreach($colors as $color)
                                             <option value="{{$color->id}}">{{$color->name}}</option>
                                         @endforeach
                                     </select>
                                 </td>
-                                <td><input type="number" step="1" min="0" max="10000" class="form-control" name="#" required></td>
-                                <td><a class="btn btn-xs btn-danger" onclick="">Eliminar</a>
-                                </td>
+                                <td><input type="number" step="1" min="0" max="10000" class="form-control" style="width: 110px;" name="quantity_0" required></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </fieldset>
-             <div class="text-center">
-                <button type="button" class="btn btn-xs btn-success">Agregar color</button>
-            </div>
-        </div>
-
-        <div class="col-sm-4">
-            <fieldset>
-                <legend>Nombres coloquiales</legend>
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="text" class="form-control" name="coloquial" required></td>
-                                <td><a class="btn btn-xs btn-danger" onclick="">Eliminar</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </fieldset>
-            <div class="text-center">
-                <button type="button" class="btn btn-xs btn-success">Agregar nombre</button>
-            </div>
         </div>
 
         <div class="col-sm-4">
@@ -145,6 +184,7 @@
     </div>
 
     <div class="text-center">
-        <button type="submit" class="btn btn-template-main"><i class="fa fa-user-md"></i>Crear</button>
+        <button type="submit" class="btn btn-template-main">Crear</button>
     </div>
 </form>
+

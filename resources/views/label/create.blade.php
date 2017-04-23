@@ -8,10 +8,10 @@
     </div>
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-sm-8">
             <p>Selecciona las especies a las que deseas asignar esta etiqueta</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4">
             <div class="panel-body">
                 <form role="search">
                     <div class="input-group">
@@ -39,6 +39,6 @@
      
 
     <div class="text-center">
-        <button type="submit" class="btn btn-template-main"><i class="fa fa-user-md"></i>Crear</button>
+        <button type="submit" class="btn btn-template-main">Crear</button>
     </div>
 </form>
