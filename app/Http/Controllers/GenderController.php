@@ -8,12 +8,6 @@ use App\Family;
 
 class GenderController extends Controller
 {
-    public function create(){
-
-        $families = Family::all();
-        return view('gender.create', compact('families'));
-    }
-
      public function store(){
         $this->validate(request(), [
             'description' => 'required',

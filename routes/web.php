@@ -27,13 +27,17 @@ Route::post('/generos/crear', 'GenderController@store');
 
 Route::post('/especies/crear', 'SpecieController@store');
 
+Route::post('/colores/crear', 'ColorController@store');
+
+Route::post('/etiquetas/crear', 'LabelController@store');
+
 Route::get('/crear', function() {
-    $classes = App\Clase::all();
-    $orders = App\Order::all();
-    $families = App\Family::all();
-    $genders = App\Gender::all();
-    $species = App\Specie::all();
-    $colors = App\Color::all();
+    $classes = App\Clase::all()->sortBy('name');
+    $orders = App\Order::all()->sortBy('name');
+    $families = App\Family::all()->sortBy('name');
+    $genders = App\Gender::all()->sortBy('name');
+    $species = App\Specie::all()->sortBy('name');
+    $colors = App\Color::all()->sortBy('name');
 
     return view('admin.create', compact('classes' ,'orders', 'families', 'genders', 'species', 'colors'));
 });

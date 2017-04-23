@@ -111,7 +111,7 @@
             </fieldset>
         </div>
 
-        <div class="col-sm-4">
+        <div class="col-sm-4">  
             <fieldset>
                 <legend>Inventario</legend>
                 <div class="table-responsive">
@@ -132,7 +132,7 @@
                                     <select class="form-control" id="colorsSelect" name="color_0">
                                         <option value="0">Selecciona</option>
                                         @foreach($colors as $color)
-                                            <option value="{{$color->id}}">{{$color->name}}</option>
+                                            <option value="{{$color->id}}" style="color: {{$color->rgb}}">{{$color->name}}</option>
                                         @endforeach
                                     </select>
                                 </td>

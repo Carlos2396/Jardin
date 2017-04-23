@@ -1,5 +1,5 @@
 
-<form action="/color/crear" method="POST">
+<form action="/colores/crear" method="POST">
     {{ csrf_field() }}
 
     <div class="row">

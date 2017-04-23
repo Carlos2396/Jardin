@@ -1,3 +1,14 @@
+<script>
+    function filter(){
+        var input = document.getElementById("searchInput").value;
+        var container = document.getElementById('speciesList');
+        var count = container.childElementCount;
+
+        for(var i; i<count; i++){
+            
+        }
+    }
+</script>
 
 <form action="/etiquetas/crear" method="POST">
 
@@ -13,22 +24,21 @@
         </div>
         <div class="col-sm-4">
             <div class="panel-body">
-                <form role="search">
+                
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" class="form-control" placeholder="Search" id="searchInput" onchange="filter()">
                         <span class="input-group-btn">
-                            <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
-
+                            <button type="button" class="btn btn-template-main" onclick="filter()"><i class="fa fa-search"></i></button>
 		                </span>
                     </div>
-                </form>
+
             </div>
         </div>
     </div>
     
-    <div class="row">
+    <div class="row" id="speciesList">
         @foreach($species as $specie)
-            <div class="col-sm-3">
+            <div class="col-xs-6 col-md-3">
                 <div class="form-group">
                     <label for="{{$specie->name.$specie->id}}">{{$specie->name}}</label>
                     <input type="checkbox" name="{{$specie->id}}" id="{{$specie->name.$specie->id}}" value="1"><br>
