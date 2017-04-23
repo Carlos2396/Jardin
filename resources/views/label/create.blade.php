@@ -7,25 +7,26 @@
         <input type="text" class="form-control" id="name" name="name" required>
     </div>
 
-    <div class="form-group">
-        <div class="col-md-6">
+    <div class="row">
+        <div class="col-md-8">
             <p>Selecciona las especies a las que deseas asignar esta etiqueta</p>
         </div>
-        <div class="col-md-6">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="search" name="search" placeholder="Búsqueda" required>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <button type="button" class="btn btn-template-main">Buscar</button>
-                </div>
+        <div class="col-md-4">
+            <div class="panel-body">
+                <form role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+
+		                </span>
+                    </div>
+                </form>
             </div>
         </div>
-
-        <hr>
-        
+    </div>
+    
+    <div class="row">
         @foreach($species as $specie)
             <div class="col-sm-3">
                 <div class="form-group">
