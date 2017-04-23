@@ -1,6 +1,7 @@
 <script>
     var nameCount = 1;
     var colorCount = 1;
+    var imageCount = 3;
 
     function addName(){
         var table = document.getElementById("namesTable");
@@ -39,6 +40,24 @@
             var table = document.getElementById("colorsTable");
             table.deleteRow(colorCount);
             colorCount--;
+        }
+    }
+
+    function addImage(){
+        var table = document.getElementById("imagesTable");
+        var row = table.insertRow();
+        var imageNameCell = row.insertCell(0);
+        imageNameCell.innerHTML = "Detalle " + (imageCount);
+        var imageCell = row.insertCell(1);
+        imageCell.innerHTML = "<input type=\"file\"  accept=\"image/*\" name=\"img"+imageCount+"\" required>";
+        imageCount++;
+    }
+
+    function removeImage(){
+        if(imageCount > 3){
+            var table = document.getElementById("imagesTable");
+            table.deleteRow(imageCount);
+            imageCount--;
         }
     }
 
@@ -148,17 +167,20 @@
             <fieldset>
                 <legend>Imágenes</legend>
                 <div class="table-responsive">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="imagesTable">
                         <thead>
                             <tr>
                                 <th>Nombre</th>
-                                <th>Archivo</th>
+                                <th>Archivo
+                                    <button type="button" class="btn btn-xs btn-success" onclick="addImage()">+</button>
+                                    <button type="button"  class="btn btn-xs btn-danger" onclick="removeImage()">-</button>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Catálogo</td>
-                                <td><input type="file" name="img1" accept="image/*"></td>
+                                <td><input type="file" name="img1" accept="image/*" ></td>
                             </tr>
                             <tr>
                                 <td>Detalle 1</td>
@@ -167,14 +189,6 @@
                             <tr>
                                 <td>Detalle 2</td>
                                 <td><input type="file" name="img3" accept="image/*"></td>
-                            </tr>
-                            <tr>
-                                <td>Detalle 3</td>
-                                <td><input type="file" name="img4" accept="image/*"></td>
-                            </tr>
-                            <tr>
-                                <td>Detalle 4</td>
-                                <td><input type="file" name="img5" accept="image/*"></td>
                             </tr>
                         </tbody>
                     </table>
