@@ -106,15 +106,14 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <fieldset>
                 <legend>Nombres coloquiales</legend>
                 <div class="table-responsive">
                     <table class="table table-hover" id="namesTable">
                         <thead>
                             <tr>
-                                <th>Nombre</th>
-                                <th>
+                                <th>Nombre
                                     <button type="button" class="btn btn-xs btn-success" onclick="addName()">+</button>
                                     <button type="button"  class="btn btn-xs btn-danger" onclick="removeName()">-</button>
                                 </th>
@@ -151,7 +150,7 @@
                                     <select class="form-control" id="colorsSelect" name="color_0">
                                         <option value="0">Selecciona</option>
                                         @foreach($colors as $color)
-                                            <option value="{{$color->id}}" style="color: {{$color->rgb}}">{{$color->name}}</option>
+                                            <option value="{{$color->id}}" style="color: {{$color->rgb}}  background-color:#cccccc;">{{$color->name}}</option>
                                         @endforeach
                                     </select>
                                 </td>
@@ -163,7 +162,7 @@
             </fieldset>
         </div>
 
-        <div class="col-sm-4">
+        <div class="col-sm-5">
             <fieldset>
                 <legend>Imágenes</legend>
                 <div class="table-responsive">
@@ -171,7 +170,8 @@
                         <thead>
                             <tr>
                                 <th>Nombre</th>
-                                <th>Archivo
+                                <th>Archivo</th>
+                                <th>
                                     <button type="button" class="btn btn-xs btn-success" onclick="addImage()">+</button>
                                     <button type="button"  class="btn btn-xs btn-danger" onclick="removeImage()">-</button>
                                 </th>
