@@ -11,11 +11,11 @@
     }
 
     function removeName(){
-        var table = document.getElementById("namesTable");
-        table.deleteRow(nameCount);
-
-        if(nameCount > 0)
+        if(nameCount > 0){
+            var table = document.getElementById("namesTable");
+            table.deleteRow(nameCount);
             nameCount--;
+        }
     }
 
     function addColor(){
