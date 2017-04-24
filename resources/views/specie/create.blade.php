@@ -180,15 +180,15 @@
                         <tbody>
                             <tr>
                                 <td>Catálogo</td>
-                                <td><input type="file" name="img1" accept="image/*" ></td>
+                                <td><input type="file" name="img0" accept="image/*" ></td>
                             </tr>
                             <tr>
                                 <td>Detalle 1</td>
-                                <td><input type="file" name="img2" accept="image/*"></td>
+                                <td><input type="file" name="img1" accept="image/*"></td>
                             </tr>
                             <tr>
                                 <td>Detalle 2</td>
-                                <td><input type="file" name="img3" accept="image/*"></td>
+                                <td><input type="file" name="img2" accept="image/*"></td>
                             </tr>
                         </tbody>
                     </table>
