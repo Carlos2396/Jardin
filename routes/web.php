@@ -31,13 +31,5 @@ Route::post('/colores/crear', 'ColorController@store');
 
 Route::post('/etiquetas/crear', 'LabelController@store');
 
-Route::get('/crear', function() {
-    $classes = App\Clase::all()->sortBy('name');
-    $orders = App\Order::all()->sortBy('name');
-    $families = App\Family::all()->sortBy('name');
-    $genders = App\Gender::all()->sortBy('name');
-    $species = App\Specie::all()->sortBy('name');
-    $colors = App\Color::all()->sortBy('name');
-
-    return view('admin.create', compact('classes' ,'orders', 'families', 'genders', 'species', 'colors'));
-});
+Route::get('/crear', 'AdminController@create');
+Route::get('/editar', 'AdminController@edit');
