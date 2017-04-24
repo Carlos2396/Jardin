@@ -29,8 +29,8 @@
                     @foreach($families as $family)
                         <tr>
                             <td>{{$family->name}}</td>
-                            <td><button type="button" class="btn btn-xs btn-info" href="/editar/familia/{{$family->id}}">Editar</button></td>
-                            <td><button type="button" class="btn btn-xs btn-danger" href="/eliminar/familia/{{$family->id}}">Eliminar</button></td>
+                            <td><a href="/editar/familia/{{$family->id}}"><button type="button" class="btn btn-xs btn-info" >Editar</button></a></td>
+                            <td><a href="/eliminar/familio/{{$family->id}}>"<button type="button" class="btn btn-xs btn-danger">Eliminar</button></a></td>
                         </tr>
                     @endforeach
                 </tbody>

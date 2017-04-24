@@ -27,4 +27,21 @@ class FamilyController extends Controller
 
         return redirect('/crear');        
     }
+
+     public function edit(Family $family){
+        $orders = Order::all();
+        return view('family.edit', compact('orders', 'family'));
+    }
+
+    public function update(Family $family){
+         $this->validate(request(), [
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+        $family->name=request('name');
+        $family->description=request('description');
+        $family->order_id=request('order');
+        $family->save();
+        return redirect('/editar');   
+    }
 }

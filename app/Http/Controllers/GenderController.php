@@ -28,4 +28,28 @@ class GenderController extends Controller
 
         return redirect('/crear');        
     }
+
+     public function edit(Gender $gender){
+        $families = Family::all();
+        return view('gender.edit', compact('families', 'gender'));
+    }
+
+    public function update(Gender $gender){
+         $this->validate(request(), [
+            'description' => 'required',
+            'water_care' => 'required',
+            'light_care' => 'required',
+            'temp_care' => 'required',
+            'name' => 'required',
+        ]);
+        $gender->name=request('name');
+        $gender->description= request('description');
+        $gender->water_care = request('water_care');
+        $gender->light_care = request('light_care');
+        $gender->temp_care = request('temp_care');
+        $gender->family_id = request('family');
+        $gender->save();
+        return redirect('/editar');   
+    }
+
 }
