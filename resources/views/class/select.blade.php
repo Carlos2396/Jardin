@@ -30,7 +30,7 @@
                         <tr>
                             <td>{{$class->name}}</td>
                             <td><button type="button" class="btn btn-xs btn-info" href="/editar/clase/{{$class->id}}">Editar</button></td>
-                            <td><button type="button" class="btn btn-xs btn-danger" href="/editar/eliminar/{{$class->id}}">Eliminar</button></td>
+                            <td><button type="button" class="btn btn-xs btn-danger" href="/eliminar/clase/{{$class->id}}">Eliminar</button></td>
                         </tr>
                     @endforeach
                 </tbody>

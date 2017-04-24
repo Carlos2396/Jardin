@@ -33,6 +33,6 @@ class AdminController extends Controller
         $colors = Color::all()->sortBy('name');
         $labels = Label::all()->sortBy('name');
 
-        return view('admin.edit', compact('classes' ,'orders', 'families', 'genders', 'species', 'colors'));
+        return view('admin.edit', compact('classes' ,'orders', 'families', 'genders', 'species', 'colors', 'labels'));
     }
 }

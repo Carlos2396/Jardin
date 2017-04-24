@@ -56,26 +56,32 @@ Crear
             <!-- /.tab -->
 
             <div class="tab-pane" id="orden">
+                 @include('order.select')
             </div>
             <!-- /.tab -->
 
             <div class="tab-pane" id="familia">
+                 @include('family.select')
             </div>
             <!-- /.tab -->
 
             <div class="tab-pane" id="genero">
+                 @include('gender.select')
             </div>
             <!-- /.tab -->
 
             <div class="tab-pane" id="especie">
+                @include('specie.select')
             </div>
             <!-- /.tab -->
 
             <div class="tab-pane" id="color">
+                 @include('color.select')
             </div>
             <!-- /.tab -->
 
             <div class="tab-pane" id="etiqueta">
+                @include('label.select')
             </div>
             <!-- /.tab -->
         </div>
