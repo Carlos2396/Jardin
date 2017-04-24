@@ -196,9 +196,18 @@
             </fieldset>
         </div>
     </div>
-
+    <input type="hidden" class="form-control" id="nameCount" name="nameCount">
+    <input type="hidden" class="form-control" id="colorCount" name="colorCount">
+    <input type="hidden" class="form-control" id="imageCount" name="imageCount">
     <div class="text-center">
-        <button type="submit" class="btn btn-template-main">Crear</button>
+        <button type="submit" class="btn btn-template-main" onclick="setCounts();">Crear</button>
+            <script type="text/javascript">
+                 function setCounts(){
+                        document.getElementById('nameCount').value = nameCount;
+                        document.getElementById('colorCount').value = colorCount;
+                        document.getElementById('imageCount').value = imageCount;
+                };
+            </script>
     </div>
 </form>
 
