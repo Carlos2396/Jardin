@@ -62,12 +62,12 @@
         @foreach($species as $specie)
             <div class="col-xs-6 col-md-3" style="">
                 <div class="form-group">
-                    @if($specie->id==$label->specie_id)
+                    @if($label->species->contains($specie))
                         <label for="{{$specie->name.$specie->id}}">{{$specie->name}}</label>
-                        <input type="checkbox" name="{{$specie->id}}" id="{{$specie->name.$specie->id}}" value="1" checked=true><br>
+                        <input type="checkbox" name="{{$specie->id}}" id="{{$specie->name.$specie->id}}" value="1" checked><br>
                     @else
                         <label for="{{$specie->name.$specie->id}}">{{$specie->name}}</label>
-                        <input type="checkbox" name="{{$specie->id}}" id="{{$specie->name.$specie->id}}" value="1" checked=false><br>
+                        <input type="checkbox" name="{{$specie->id}}" id="{{$specie->name.$specie->id}}" value="1" ><br>
                     @endif
                 </div>
             </div>

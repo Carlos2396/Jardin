@@ -40,13 +40,21 @@ class LabelController extends Controller
             'name' => 'required'
         ]);
         $label->name= request('name');
-        //este for solo creaa otras tablas cruce, pero hay que eliminar las que se quitan y conservar las que se quedan
+        
         for($i=0; $i<= Specie::all()->count(); $i++){
+            $labelSpecie = LabelSpecie::where('specie_id', $i)->where('label_id', $label->id)->first();
             if(request($i)){
-                LabelSpecie::create([
-                    'label_id' => $label->id,
-                    'specie_id' => $i
-                ]);
+                if($labelSpecie==null){
+                    LabelSpecie::create([
+                        'label_id' => $label->id,
+                        'specie_id' => $i
+                    ]);
+                }
+            }
+            else{
+                if($labelSpecie!=null){
+                   $labelSpecie->delete();      
+                }
             }
         }
         return redirect('/editar');   
