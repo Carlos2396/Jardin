@@ -87,7 +87,7 @@ class SpecieController extends Controller
 
             Image::create([
                 'name'=>$imageName,
-                'path'=>public_path("/img/species"),
+                'path'=>public_path("img\species"),
                 'specie_id'=>$specie->id,
             ]);
         }
