@@ -63,7 +63,7 @@
 
 </script>
 
-<form action="/especies/crear" method="POST">
+<form action="/especies/crear" enctype="multipart/form-data" method="POST">
     {{ csrf_field() }}
 
     <div class="row">
@@ -101,8 +101,8 @@
     </div>
 
     <div class="form-group">
-            <label for="special_care">Cuidados especiales</label>
-            <textarea class="form-control" id="special_care" name="special_care" required></textarea>
+            <label for="especial_care">Cuidados especiales</label>
+            <textarea class="form-control" id="especial_care" name="especial_care" required></textarea>
     </div>
 
     <div class="row">

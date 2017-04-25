@@ -8,6 +8,8 @@ use App\Genero;
 use App\Name;
 use App\Color;
 use App\Image;
+use App\ColorSpecie;
+
 
 class SpecieController extends Controller
 {
@@ -22,14 +24,15 @@ class SpecieController extends Controller
     public function store(){
         $nameCount=request('nameCount');
         $colorCount=request('colorCount');
-        $imageCount=request('iamgeCount');
-
+        $imageCount=request('imageCount');
+        $gender=request('gender');
+        
         $this->validate(request(), [
             'name' => 'required',
             'price' => 'required',
             'gender'=>'required',
             'description'=>'required',
-            'special_care'=>'required',
+            'especial_care'=>'required',
         ]);
 
         for($i=0; $i<$nameCount; $i++){
@@ -45,7 +48,10 @@ class SpecieController extends Controller
         }
 
         for($i=0; $i<$imageCount; $i++){
-            //Aqui va lo de validar imagenes 
+            //Aqui va lo de validar imagenes
+            $validator=$this->validate(request(), [
+                'img'.$i=> 'required|image|mimes:jpeg,png,jpg|max:2048'
+            ]);
         }
 
         $specie=Specie::create([
@@ -53,7 +59,7 @@ class SpecieController extends Controller
             'price' => request('price'),
             'gender_id' => request('gender'),
             'description' => request('description'),
-            'special_care'=>request('special_care'),
+            'especial_care'=>request('especial_care'),
         ]);
 
         for($i=0; $i<$nameCount; $i++){
@@ -73,6 +79,17 @@ class SpecieController extends Controller
 
         for($i=0; $i<$imageCount; $i++){
             //aqui va lo de crear imagen
+            $request = request('img'.$i);
+            $ext = $request->getClientOriginalExtension();
+            $imageName=$specie->name.'_'.$i;
+            
+            $request->move(public_path("img\species"), $imageName.'.'.$ext);
+
+            Image::create([
+                'name'=>$imageName,
+                'path'=>public_path("/img/species"),
+                'specie_id'=>$specie->id,
+            ]);
         }
 
         return redirect('/crear');
