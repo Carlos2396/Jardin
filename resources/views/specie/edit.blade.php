@@ -84,7 +84,7 @@
         <div class="col-sm-4">
             <div class="form-group">
                 <label for="price">Precio ($MXN) </label>
-                <input type="number" step="0.10" min="0" max="99999" class="form-control" id="price" name="price" value="{{specie->price}}" required>
+                <input type="number" step="0.10" min="0" max="99999" class="form-control" id="price" name="price" value="{{$specie->price}}" required>
             </div>
         </div>
 

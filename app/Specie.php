@@ -37,9 +37,9 @@ class Specie extends Model
 
     public function deleteSpecie(){
         $labelSpecies=LabelSpecie::all();
-        $colorSpeceis=ColorSpecie::all();
-        $images=ImageSpecie::all();
-        $names=Names::all();
+        $colorSpecies=ColorSpecie::all();
+        $images=Image::all();
+        $names=Name::all();
         foreach($labelSpecies as $labelSpecie){
             if($labelSpecie->specie_id==$this->id){
                 $labelSpecie->delete();

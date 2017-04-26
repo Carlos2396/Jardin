@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Specie;
-use App\Genero;
+use App\Gender;
 use App\Name;
 use App\Color;
 use App\Image;
@@ -117,7 +117,7 @@ class SpecieController extends Controller
     }
 
     public function deleteSpecie(Specie $specie){
-        $specie.deleteSpecie();
+        $specie->deleteSpecie();
         $specie->delete();
         return redirect('/editar');
     }
