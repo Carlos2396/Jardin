@@ -20,11 +20,11 @@ class CreateLabelsTable extends Migration
         });
 
         Schema::create('label_specie', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('label_id')->unsigned();
             $table->integer('specie_id')->unsigned();
             $table->timestamps();
 
-            $table->primary(['label_id','specie_id']);
             $table->foreign('label_id')->references('id')->on('labels')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('specie_id')->references('id')->on('species')->onUpdate('cascade')->onDelete('cascade');
         });
