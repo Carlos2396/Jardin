@@ -81,7 +81,7 @@ class SpecieController extends Controller
             //aqui va lo de crear imagen
             $request = request('img'.$i);
             $ext = $request->getClientOriginalExtension();
-            $imageName=$specie->name.'_'.$i;
+            $imageName=$specie->gender->name.$specie->name.'_'.$i;
             
             $request->move(public_path("img\species"), $imageName.'.'.$ext);
 
