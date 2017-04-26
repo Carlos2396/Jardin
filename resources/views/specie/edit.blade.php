@@ -1,3 +1,10 @@
+@extends('layouts.master')
+
+@section('title')
+    Editar clase
+@endsection
+
+@section('content')
 <script>
     var nameCount = 1;
     var colorCount = 1;
@@ -69,15 +76,15 @@
     <div class="row">
         <div class="col-sm-4">
             <div class="form-group">
-                <label for="name">Nombre científico</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+                <label for="name">Nombre científico</label> 
+                <input type="text" class="form-control" id="name" name="name" value="{{$specie->name}}" required>
             </div>
         </div>
 
         <div class="col-sm-4">
             <div class="form-group">
                 <label for="price">Precio ($MXN) </label>
-                <input type="number" step="0.10" min="0" max="99999" class="form-control" id="price" name="price" required>
+                <input type="number" step="0.10" min="0" max="99999" class="form-control" id="price" name="price" value="{{specie->price}}" required>
             </div>
         </div>
 
@@ -87,7 +94,11 @@
                     <select class="form-control" id="gender" name="gender">
                         <option value="0">Selecciona</option>
                         @foreach($genders as $gender)
-                            <option value="{{$gender->id}}">{{$gender->name}}</option>
+                            @if($gender->id==$specie->gender_id)
+                                <option value="{{$gender->id}}" selected>{{$gender->name}}</option>
+                            @else
+                                <option value="{{$gender->id}}">{{$gender->name}}</option>
+                            @endif
                         @endforeach
                     </select>
                 </label>
@@ -97,12 +108,12 @@
 
     <div class="form-group">
         <label for="name">Descripción</label>
-        <textarea class="form-control" id="description" name="description" required></textarea>
+        <textarea class="form-control" id="description" name="description" required>{{$specie->description}}</textarea>
     </div>
 
     <div class="form-group">
             <label for="special_care">Cuidados especiales</label>
-            <textarea class="form-control" id="special_care" name="special_care" required></textarea>
+            <textarea class="form-control" id="special_care" name="special_care" required>{{$specie->special_care}}</textarea>
     </div>
 
     <div class="row">
@@ -210,4 +221,4 @@
             </script>
     </div>
 </form>
-
+@endsection
