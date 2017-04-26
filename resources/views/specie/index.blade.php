@@ -165,21 +165,10 @@
         </div>
         <!-- /.products -->
 
-        <div class="row">
-
-            <div class="col-md-12 banner">
-                <a href="#">
-                    <img src="img/banner2.jpg" alt="" class="img-responsive">
-                </a>
-            </div>
-
-        </div>
-
-
         <div class="pages">
 
             <p class="loadMore">
-                <a href="#" class="btn btn-template-main"><i class="fa fa-chevron-down"></i> Load more</a>
+                <a href="#" class="btn btn-template-main"><i class="fa fa-chevron-down"></i> Cargar más</a>
             </p>
 
             <ul class="pagination">
@@ -200,6 +189,14 @@
             </ul>
         </div>
 
-
     </div>
+
+    <div class="row">
+            <div class="col-md-12 banner">
+                <a href="#">
+                    <img src="img/banner2.jpg" alt="" class="img-responsive">
+                </a>
+            </div>
+
+        </div>
 @endsection

@@ -35,4 +35,10 @@ class AdminController extends Controller
 
         return view('admin.edit', compact('classes' ,'orders', 'families', 'genders', 'species', 'colors', 'labels'));
     }
+
+    function logout(){
+        auth()->logout();
+
+        return redirect('/');
+    }
 }

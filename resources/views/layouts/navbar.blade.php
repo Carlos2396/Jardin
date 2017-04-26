@@ -19,7 +19,11 @@
             <div class="navbar-collapse collapse" id="navigation">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown use-yamm yamm-fw"> <a href="/inicio" class="dropdown-toggle">Inicio</a> </li>
-                    <li class="dropdown use-yamm yamm-fw"> <a href="/inicio" class="dropdown-toggle">Catálogo</logo></a> </li>
+                    <li class="dropdown use-yamm yamm-fw"> <a href="/especies" class="dropdown-toggle">Catálogo</logo></a> </li>
+                     @if(Auth::check())
+                         <li class="dropdown use-yamm yamm-fw"> <a href="/crear" class="dropdown-toggle">Crear</a> </li>
+                         <li class="dropdown use-yamm yamm-fw"> <a href="/editar" class="dropdown-toggle">Editar</a> </li>
+                     @endif
                 </ul>
             </div>
         </div>

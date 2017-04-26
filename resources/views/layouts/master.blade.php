@@ -85,7 +85,7 @@ _________________________________________________________ -->
                     <h3>Visita nuestro sitio y conoce más de nuestro jardín etnobotánico</h3>
                 </div>
                 <div class="col-md-4 col-sm-12">
-                    <a href="#" class="btn btn-template-transparent-primary">Link al sitio del jardin</a>
+                    <a href="http://www.jardinetnobotanico.org/" class="btn btn-template-transparent-primary">Link al sitio del jardin</a>
                 </div>
             </div>
         </div>
