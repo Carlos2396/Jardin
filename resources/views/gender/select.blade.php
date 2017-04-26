@@ -29,8 +29,8 @@
                     @foreach($genders as $gender)
                         <tr>
                             <td>{{$gender->name}}</td>
-                            <td><button type="button" class="btn btn-xs btn-info" href="/editar/genero/{{$gender->id}}">Editar</button></td>
-                            <td><button type="button" class="btn btn-xs btn-danger" href="/eliminar/genero/{{$gender->id}}">Eliminar</button></td>
+                            <td><a href="/editar/genero/{{$gender->id}}"><button type="button" class="btn btn-xs btn-info" >Editar</button></a></td>
+                            <td><a href="/eliminar/genero/{{$gender->id}}>"<button type="button" class="btn btn-xs btn-danger">Eliminar</button></a></td>
                         </tr>
                     @endforeach
                 </tbody>

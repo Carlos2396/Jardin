@@ -1,3 +1,10 @@
+@extends('layouts.master')
+
+@section('title')
+    Editar clase
+@endsection
+
+@section('content')
 <script>
     function filter(){
         var input = document.getElementById("searchInput").value.toLowerCase();
@@ -25,12 +32,12 @@
     }
 </script>
 
-<form action="/etiquetas/crear" method="POST">
+<form action="/editar/etiqueta/{{$label->id}}" method="POST">
 
     {{ csrf_field() }}
     <div class="form-group">
         <label for="name">Nombre de la etiqueta</label>
-        <input type="text" class="form-control" id="labelName" name="name" required>
+        <input type="text" class="form-control" id="labelName" name="name" value="{{$label->name}}" required>
     </div>
 
     <div class="row">
@@ -55,8 +62,13 @@
         @foreach($species as $specie)
             <div class="col-xs-6 col-md-3" style="">
                 <div class="form-group">
-                    <label for="{{$specie->name.$specie->id}}">{{$specie->name}}</label>
-                    <input type="checkbox" name="{{$specie->id}}" id="{{$specie->name.$specie->id}}" value="1"><br>
+                    @if($label->species->contains($specie))
+                        <label for="{{$specie->name.$specie->id}}">{{$specie->name}}</label>
+                        <input type="checkbox" name="{{$specie->id}}" id="{{$specie->name.$specie->id}}" value="1" checked><br>
+                    @else
+                        <label for="{{$specie->name.$specie->id}}">{{$specie->name}}</label>
+                        <input type="checkbox" name="{{$specie->id}}" id="{{$specie->name.$specie->id}}" value="1" ><br>
+                    @endif
                 </div>
             </div>
         @endforeach
@@ -65,6 +77,7 @@
     <div class="alert alert-danger" role="alert" id="notFound" style="display: none;">Ninguna especie coincide con esa búsqueda.</div>
     
     <div class="text-center">
-        <button type="submit" class="btn btn-template-main">Crear</button>
+        <button type="submit" class="btn btn-template-main">Editar</button>
     </div>
 </form>
+@endsection

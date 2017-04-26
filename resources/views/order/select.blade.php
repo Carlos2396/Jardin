@@ -29,8 +29,8 @@
                     @foreach($orders as $order)
                         <tr>
                             <td>{{$order->name}}</td>
-                            <td><button type="button" class="btn btn-xs btn-info" href="/editar/orden/{{$order->id}}">Editar</button></td>
-                            <td><button type="button" class="btn btn-xs btn-danger" href="/eliminar/orden/{{$order->id}}">Eliminar</button></td>
+                            <td><a href="/editar/orden/{{$order->id}}"><button type="button" class="btn btn-xs btn-info" >Editar</button></a></td>
+                            <td><a href="/eliminar/orden/{{$order->id}}>"<button type="button" class="btn btn-xs btn-danger">Eliminar</button></a></td>
                         </tr>
                     @endforeach
                 </tbody>

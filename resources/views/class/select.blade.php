@@ -29,8 +29,8 @@
                     @foreach($classes as $class)
                         <tr>
                             <td>{{$class->name}}</td>
-                            <td><button type="button" class="btn btn-xs btn-info" href="/editar/clase/{{$class->id}}">Editar</button></td>
-                            <td><button type="button" class="btn btn-xs btn-danger" href="/eliminar/clase/{{$class->id}}">Eliminar</button></td>
+                            <td><a href="/editar/clase/{{$class->id}}"><button type="button" class="btn btn-xs btn-info" >Editar</button></a></td>
+                            <td><a href="/eliminar/clase/{{$class->id}}>"<button type="button" class="btn btn-xs btn-danger">Eliminar</button></a></td>
                         </tr>
                     @endforeach
                 </tbody>

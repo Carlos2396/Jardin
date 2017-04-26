@@ -31,8 +31,8 @@
                         <tr>
                             <td>{{$specie->name}}</td>
                             <td>{{$specie->gender->name}}</td>
-                            <td><button type="button" class="btn btn-xs btn-info" href="/editar/especie/{{$specie->id}}">Editar</button></td>
-                            <td><button type="button" class="btn btn-xs btn-danger" href="/eliminar/especie/{{$specie->id}}">Eliminar</button></td>
+                            <td><a href="/editar/especie/{{$specie->id}}"><button type="button" class="btn btn-xs btn-info" >Editar</button></a></td>
+                            <td><a href="/eliminar/especie/{{$specie->id}}"><button type="button" class="btn btn-xs btn-danger">Eliminar</button></a></td>
                         </tr>
                     @endforeach
                 </tbody>

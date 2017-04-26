@@ -34,7 +34,7 @@ Crear
 
     <div class="tabs">
         <ul class="nav nav-pills nav-justified">
-            <li class="active"><a href="#clase" data-toggle="tab">Clase</a>
+            <li class="active"><a href="#clase" data-toggle="tab">Clases</a>
             </li>
             <li><a href="#orden" data-toggle="tab">Ordenes</a>
             </li>

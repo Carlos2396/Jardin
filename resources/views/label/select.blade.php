@@ -29,8 +29,8 @@
                     @foreach($labels as $label)
                         <tr>
                             <td>{{$label->name}}</td>
-                            <td><button type="button" class="btn btn-xs btn-info" href="/editar/etiqueta/{{$label->id}}">Editar</button></td>
-                            <td><button type="button" class="btn btn-xs btn-danger" href="/eliminar/etiqueta/{{$label->id}}">Eliminar</button></td>
+                            <td><a href="/editar/etiqueta/{{$label->id}}"><button type="button" class="btn btn-xs btn-info" >Editar</button></a></td>
+                            <td><a href="/eliminar/etiqueta/{{$label->id}}>"<button type="button" class="btn btn-xs btn-danger">Eliminar</button></a></td>
                         </tr>
                     @endforeach
                 </tbody>

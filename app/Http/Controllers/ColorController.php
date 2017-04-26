@@ -20,4 +20,20 @@ class ColorController extends Controller
 
         return redirect('/crear');
      }
+
+     public function edit(Color $color){
+         return view('color.edit', compact('color'));
+     }
+
+     public function update(Color $color){
+         $this->validate(request(), [
+            'name'=>'required',
+            'color' => 'required'
+        ]);
+        $color->name=request('name');
+        $color->rgb=request('color');
+        $color->save();
+        return redirect('/editar');   
+    }
+
 }
