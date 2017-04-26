@@ -6,6 +6,8 @@ Route::get('/', function() {
 
 Route::get('/especies', 'SpecieController@index');
 Route::get('/especies/{specie}', 'SpecieController@show');
+Route::get('/editar/especie/{specie}', 'SpecieController@edit');
+Route::post('/editar/especie/{specie}', 'SpecieController@update');
 
 Route::group(['middleware'=>'auth'], function() {
     Route::post('/clases/crear', 'ClaseController@store');

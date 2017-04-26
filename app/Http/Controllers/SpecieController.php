@@ -94,4 +94,25 @@ class SpecieController extends Controller
 
         return redirect('/crear');
      }
+
+     public function edit(Specie $specie){
+        $genders = Gender::all();
+        return view('specie.edit', compact('genders', 'specie'));
+    }
+
+    public function update(Specie $specie){
+         $this->validate(request(), [
+            'description' => 'required',
+            'special_care' => 'required',
+            'price' => 'required',
+            'name' => 'required',
+        ]);
+        $specie->name=request('name');
+        $specie->description= request('description');
+        $specie->special_care = request('special_care');
+        $specie->price = request('price');
+        $specie->gender_id= request('gender');
+        $specie->save();
+        return redirect('/editar');   
+    }
 }
