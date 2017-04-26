@@ -6,13 +6,12 @@ Route::get('/', function() {
 
 Route::get('/especies', 'SpecieController@index');
 Route::get('/especies/{specie}', 'SpecieController@show');
-Route::get('/editar/especie/{specie}', 'SpecieController@edit');
-Route::post('/editar/especie/{specie}', 'SpecieController@update');
 
 Route::group(['middleware'=>'auth'], function() {
     Route::post('/clases/crear', 'ClaseController@store');
     Route::get('/editar/clase/{class}', 'ClaseController@edit');
     Route::post('/editar/clase/{class}', 'ClaseController@update');
+    Route::get('/eliminar/clase/{class}', 'ClaseController@delete');
 
     Route::post('/ordenes/crear', 'OrderController@store');
     Route::get('/editar/orden/{order}', 'OrderController@edit');
@@ -27,7 +26,9 @@ Route::group(['middleware'=>'auth'], function() {
     Route::post('/editar/genero/{gender}', 'GenderController@update');
 
     Route::post('/especies/crear', 'SpecieController@store');
-
+    Route::get('/editar/especie/{specie}', 'SpecieController@edit');
+    Route::post('/editar/especie/{specie}', 'SpecieController@update');
+    Route::get('/eliminar/especie/{specie}', 'SpecieController@deleteSpecie');
 
     Route::post('/colores/crear', 'ColorController@store');
     Route::get('/editar/color/{color}', 'ColorController@edit');

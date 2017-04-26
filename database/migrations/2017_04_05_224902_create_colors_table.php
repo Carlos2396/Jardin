@@ -21,12 +21,12 @@ class CreateColorsTable extends Migration
         });
 
         Schema::create('color_specie', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('color_id')->unsigned();
             $table->integer('specie_id')->unsigned();
             $table->integer('quantity');
             $table->timestamps();
 
-            $table->primary(['color_id','specie_id']);
             $table->foreign('color_id')->references('id')->on('colors')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('specie_id')->references('id')->on('species')->onUpdate('cascade')->onDelete('cascade');
         });

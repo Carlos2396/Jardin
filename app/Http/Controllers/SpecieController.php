@@ -115,4 +115,10 @@ class SpecieController extends Controller
         $specie->save();
         return redirect('/editar');   
     }
+
+    public function deleteSpecie(Specie $specie){
+        $specie.deleteSpecie();
+        $specie->delete();
+        return redirect('/editar');
+    }
 }

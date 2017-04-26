@@ -8,6 +8,8 @@ use App\Label;
 use App\Color;
 use App\Name;
 use App\Image;
+use App\LabelSpecie;
+use App\ColorSpecie;
 
 class Specie extends Model
 {
@@ -31,5 +33,32 @@ class Specie extends Model
 
     public function colors(){
         return $this->belongsToMany(Color::class);
+    }
+
+    public function deleteSpecie(){
+        $labelSpecies=LabelSpecie::all();
+        $colorSpeceis=ColorSpecie::all();
+        $images=ImageSpecie::all();
+        $names=Names::all();
+        foreach($labelSpecies as $labelSpecie){
+            if($labelSpecie->specie_id==$this->id){
+                $labelSpecie->delete();
+            }
+        }
+        foreach($colorSpecies as $colorSpecie){
+            if($colorSpecie->specie_id==$this->id){
+                $colorSpecie->delete();
+            }
+        }
+        foreach($images as $image){
+            if($image->specie_id==$this->id){
+                $image->delete();
+            }
+        }
+        foreach($names as $name){
+            if($name->specie_id==$this->id){
+                $name->delete();
+            }
+        }
     }
 }
