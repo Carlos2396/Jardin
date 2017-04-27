@@ -36,4 +36,9 @@ class ColorController extends Controller
         return redirect('/editar');   
     }
 
+    public function deleteColor(Color $color){
+        $color->delete();
+        return redirect('/editar');
+    }
+
 }

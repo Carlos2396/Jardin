@@ -44,4 +44,10 @@ class FamilyController extends Controller
         $family->save();
         return redirect('/editar');   
     }
+
+    public function deleteFamily(Family $family){
+        
+        $family->delete();
+        return redirect('/editar');
+    }
 }

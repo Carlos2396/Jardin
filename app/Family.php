@@ -17,4 +17,5 @@ class Family extends Model
     public function genders(){
         return $this->hasMany(Gender::class);
     }
+
 }

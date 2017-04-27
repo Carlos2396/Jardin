@@ -59,4 +59,9 @@ class LabelController extends Controller
         }
         return redirect('/editar');   
     }
+
+    public function deleteLabel(Label $label){
+        $label->delete();
+        return redirect('/editar');
+    }
 }

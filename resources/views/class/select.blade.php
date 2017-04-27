@@ -26,11 +26,11 @@
                     </tr>
                 </thead>
                 <tbody id="classTable">
-                    @foreach($classes as $class)
+                    @foreach($classes as $clase)
                         <tr>
-                            <td>{{$class->name}}</td>
-                            <td><a href="/editar/clase/{{$class->id}}"><button type="button" class="btn btn-xs btn-info" >Editar</button></a></td>
-                            <td><a href="/eliminar/clase/{{$class->id}}>"<button type="button" class="btn btn-xs btn-danger">Eliminar</button></a></td>
+                            <td>{{$clase->name}}</td>
+                            <td><a href="/editar/clase/{{$clase->id}}"><button type="button" class="btn btn-xs btn-info" >Editar</button></a></td>
+                            <td><a href="/eliminar/clase/{{$clase->id}}"><button type="button" class="btn btn-xs btn-danger">Eliminar</button></a></td>
                         </tr>
                     @endforeach
                 </tbody>

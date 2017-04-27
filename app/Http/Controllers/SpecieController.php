@@ -3,18 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Specie;
+use App\Clase;
+use App\Order;
+use App\Family;
 use App\Gender;
+use App\Specie;
 use App\Name;
 use App\Color;
 use App\Image;
 use App\ColorSpecie;
+use App\Label;
 
 
 class SpecieController extends Controller
 {
     public function index(){
-        return view('specie.index');
+        $classes = Clase::all()->sortBy('name');
+        $orders = Order::all()->sortBy('name');
+        $families = Family::all()->sortBy('name');
+        $genders = Gender::all()->sortBy('name');
+        $species = Specie::all()->sortBy('name');
+        $colors = Color::all()->sortBy('name');
+        $labels = Label::all()->sortBy('name');
+
+        return view('specie.index', compact('classes' ,'orders', 'families', 'genders', 'species', 'colors', 'labels'));
     }
 
     public function show(Specie $specie){
@@ -117,7 +129,6 @@ class SpecieController extends Controller
     }
 
     public function deleteSpecie(Specie $specie){
-        $specie->deleteSpecie();
         $specie->delete();
         return redirect('/editar');
     }

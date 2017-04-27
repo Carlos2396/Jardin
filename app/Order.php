@@ -8,13 +8,15 @@ use App\Family;
 
 class Order extends Model
 {
-	protected $fillable= ['name', 'description', 'class_id'];
+	protected $fillable= ['name', 'description', 'clase_id'];
 
-        public function clase(){
+    public function clase(){
         return $this->belongsTo(Clase::class);
     }
 
     public function families(){
         return $this->hasMany(Family::class);
     }
+
+    
 }
