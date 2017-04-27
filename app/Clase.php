@@ -14,4 +14,7 @@ class Clase extends Model
         return $this->hasMany(Order::class);
     }
 
+    public function entityCount(){
+        return 4;
+    }
 }

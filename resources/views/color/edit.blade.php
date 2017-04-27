@@ -3,7 +3,7 @@
 @section('title')
     Editar color
 @endsection
-
+@include('layouts.errors')
 @section('content')
     <form action="/editar/color/{{$color->id}}" method="POST">
         {{ csrf_field() }}

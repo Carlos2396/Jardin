@@ -1,4 +1,4 @@
-
+@include('layouts.errors')
 <form action="/generos/crear" method="POST">
 
     {{ csrf_field() }}

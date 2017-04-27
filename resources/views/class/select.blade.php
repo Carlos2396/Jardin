@@ -1,17 +1,18 @@
 <script>
     var link = get.documentById('deleteClass');
-
     function check(){
         $(document).ready(function() {
             $('a').click(function(event) {
                 var id = $(this).prop('id');
+                //$clase=App\Clase::where('id', $y)->first();
+                //$x=clase->entityCount();
+                $x=9;
                 if (id == 'deleteClass') {
-                    if(!confirm("just Alert HUlk"))
+                    if(confirm("Se eliminarán ".$x." entidades, está seguro de que desea continuar")){
                         event.preventDefault();
-                    
-                    //i want to prevent
-                } else {
-                    //redirect
+                    }
+                    else{
+                    }
                 }
             });
         });
@@ -48,7 +49,6 @@
                 <tbody id="classTable">
                 <?php
                     $species = App\Specie::all();
-                    dd($species);
                 ?>
                     @foreach($classes as $clase)
                         <tr>

@@ -3,7 +3,7 @@
 @section('title')
     Editar clase
 @endsection
-
+@include('layouts.errors')
 @section('content')
 <form action="/editar/orden/{{$order->id}}" method="POST">
     {{ csrf_field() }}
