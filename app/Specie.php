@@ -35,4 +35,15 @@ class Specie extends Model
         return $this->belongsToMany(Color::class)->withPivot('quantity');
     }
 
+    public function entityCount(){
+        $x=1;
+        $names=$this->names;
+        foreach($names as $name){
+            $x++;
+        }
+        foreach($this->images as $image){
+            $x++;
+        }
+        return $x;
+    }
 }

@@ -12,4 +12,9 @@ class Label extends Model
     public function species(){
         return $this->belongsToMany(Specie::class);
     }
+
+    public function entityCount(){
+        $x=1;
+        return $x;
+    }
 }

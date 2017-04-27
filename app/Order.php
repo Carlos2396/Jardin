@@ -18,5 +18,13 @@ class Order extends Model
         return $this->hasMany(Family::class);
     }
 
-    
+    public function entityCount(){
+        $x=1;
+        $families=$this->families;
+        foreach($families as $family){
+            $x+=$family->entityCount();
+            $x++;
+        }
+        return $x;
+    }
 }

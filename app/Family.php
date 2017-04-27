@@ -18,4 +18,13 @@ class Family extends Model
         return $this->hasMany(Gender::class);
     }
 
+    public function entityCount(){
+        $x=1;
+        $genders=$this->genders;
+        foreach($genders as $gender){
+            $x+=$gender->entityCount();
+            $x++;
+        }
+        return $x;
+    }
 }

@@ -5,6 +5,78 @@ Crear
 @endsection
 
 @section('content')
+<script>
+    function check(x){
+        $(document).ready(function() {
+            $('a').click(function(event) {
+                var id = $(this).prop('id');
+                if (id == 'deleteSpecie') {
+                    if(!confirm("Se eliminará(n) "+x+" entidad(es), está seguro de que desea continuar")){
+                        event.preventDefault();
+                        location.reload();
+                    }
+                }
+                else if (id == 'deleteLabel') {
+                    if(!confirm("Se eliminará(n) "+x+" entidad(es), está seguro de que desea continuar")){
+                        event.preventDefault();
+                        location.reload();
+                    }
+                }
+                else if (id == 'deleteColor') {
+                    if(!confirm("Se eliminará(n) "+x+" entidad(es), está seguro de que desea continuar")){
+                        event.preventDefault();
+                        location.reload();
+                    }
+                }
+                else if (id == 'deleteGender') {
+                    if(!confirm("Se eliminará(n) "+x+" entidad(es), está seguro de que desea continuar")){
+                        event.preventDefault();
+                        location.reload();
+                    }
+                }
+                else if (id == 'deleteOrder') {
+                    if(!confirm("Se eliminará(n) "+x+" entidad(es), está seguro de que desea continuar")){
+                        event.preventDefault();
+                        location.reload();
+                    }
+                }
+                else if (id == 'deleteGender') {
+                    if(!confirm("Se eliminará(n) "+x+" entidad(es), está seguro de que desea continuar")){
+                        event.preventDefault();
+                        location.reload();
+                    }
+                }
+                else if (id == 'deleteFamily') {
+                    if(!confirm("Se eliminará(n) "+x+" entidad(es), está seguro de que desea continuar")){
+                        event.preventDefault();
+                        location.reload();
+                    }
+                }
+                else if (id == 'deleteClase') {
+                    if(!confirm("Se eliminará(n) "+x+" entidad(es), está seguro de que desea continuar")){
+                        event.preventDefault();
+                        location.reload();
+                    }
+                }
+
+            });
+        });
+    }
+</script>
+<div class="row">
+    <div class="col-sm-4">
+        <form>
+            <div class="panel-body">
+                <div class="input-group">
+                    <input type="search" class="form-control" placeholder="Search" id="specieInput" onchange="filter('specie')">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-template-main" onclick="filter('specie')"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
     <script>
         function filter(name){
             var input = document.getElementById(name + 'Input').value.toLowerCase();

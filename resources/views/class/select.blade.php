@@ -1,17 +1,13 @@
+
 <script>
-    var link = get.documentById('deleteClass');
-    function check(){
+    function check(x){
         $(document).ready(function() {
             $('a').click(function(event) {
                 var id = $(this).prop('id');
-                //$clase=App\Clase::where('id', $y)->first();
-                //$x=clase->entityCount();
-                $x=9;
-                if (id == 'deleteClass') {
-                    if(confirm("Se eliminarán ".$x." entidades, está seguro de que desea continuar")){
+                if (id == 'deleteClase') {
+                    if(!confirm("Se eliminará(n) "+x+" entidad(es), está seguro de que desea continuar")){
                         event.preventDefault();
-                    }
-                    else{
+                        location.reload();
                     }
                 }
             });
@@ -54,7 +50,7 @@
                         <tr>
                             <td>{{$clase->name}}</td>
                             <td><a href="/editar/clase/{{$clase->id}}"><button type="button" class="btn btn-xs btn-info" >Editar</button></a></td>
-                            <td><a href="/eliminar/clase/{{$clase->id}}" id="deleteClass"><button type="button" class="btn btn-xs btn-danger" onclick="check()">Eliminar</button></a></td>
+                            <td><a href="/eliminar/clase/{{$clase->id}}" id="deleteClass"><button type="button" class="btn btn-xs btn-danger" onclick="check({{$clase->entityCount()}})">Eliminar</button></a></td>
                         </tr>
                     @endforeach
                 </tbody>

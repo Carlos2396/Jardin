@@ -30,7 +30,7 @@
                         <tr>
                             <td>{{$label->name}}</td>
                             <td><a href="/editar/etiqueta/{{$label->id}}"><button type="button" class="btn btn-xs btn-info" >Editar</button></a></td>
-                            <td><a href="/eliminar/etiqueta/{{$label->id}}"><button type="button" class="btn btn-xs btn-danger">Eliminar</button></a></td>
+                            <td><a href="/eliminar/etiqueta/{{$label->id}}" id="deleteLabel"><button type="button" class="btn btn-xs btn-danger" onclick="check({{$label->entityCount()}})">Eliminar</button></a></td>
                         </tr>
                     @endforeach
                 </tbody>

@@ -18,4 +18,13 @@ class Gender extends Model
         return $this->hasMany(Specie::class);
     }
 
+    public function entityCount(){
+        $x=1;
+        $species=$this->species;
+        foreach($species as $specie){
+            $x+=$specie->entityCount();
+            $x++;
+        }
+        return $x;
+    }
 }

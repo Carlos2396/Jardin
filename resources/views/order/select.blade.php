@@ -30,7 +30,7 @@
                         <tr>
                             <td>{{$order->name}}</td>
                             <td><a href="/editar/orden/{{$order->id}}"><button type="button" class="btn btn-xs btn-info" >Editar</button></a></td>
-                            <td><a href="/eliminar/orden/{{$order->id}}"><button type="button" class="btn btn-xs btn-danger">Eliminar</button></a></td>
+                            <td><a href="/eliminar/orden/{{$order->id}}" id="deleteOrder"><button type="button" class="btn btn-xs btn-danger" onclick="check({{$order->entityCount()}})">Eliminar</button></a></td>
                         </tr>
                     @endforeach
                 </tbody>
