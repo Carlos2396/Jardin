@@ -10,6 +10,6 @@ class Color extends Model
     protected $fillable= ['name', 'rgb'];
 
     public function species(){
-        return $this->belongsToMany(Specie::class);
+        return $this->belongsToMany(Specie::class)->withPivot('quantity');
     }
 }

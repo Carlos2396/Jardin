@@ -4,7 +4,7 @@ Route::get('/', function() {
     return view('inicio');
 });
 
-Route::get('/especies', 'SpecieController@index');
+Route::get('/especies', 'SpecieController@index')->name('/home');
 Route::get('/especies/{specie}', 'SpecieController@show');
 Route::post('/especies', 'SpecieController@filter');
 Route::get('logout', 'AdminController@logout');
