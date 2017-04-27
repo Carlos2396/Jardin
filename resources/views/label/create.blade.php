@@ -39,14 +39,12 @@
         </div>
         <div class="col-sm-4">
             <div class="panel-body">
-                
-                    <div class="input-group">
-                        <input type="search" class="form-control" placeholder="Search" id="searchInput" onchange="filter()">
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-template-main" onclick="filter()"><i class="fa fa-search"></i></button>
-		                </span>
-                    </div>
-
+                <div class="input-group">
+                    <input type="search" class="form-control" placeholder="Search" id="searchInput" onchange="filter()">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-template-main" onclick="filter()"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
             </div>
         </div>
     </div>
