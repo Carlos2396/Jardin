@@ -111,7 +111,10 @@ class SpecieController extends Controller
 
      public function edit(Specie $specie){
         $genders = Gender::all();
-        return view('specie.edit', compact('genders', 'specie'));
+        $colors = Color::all();
+        $colorSpecie = ColorSpecie::all();
+        $names = Name::where('specie_id','=',$specie->id)->get();
+        return view('specie.edit', compact('genders', 'specie', 'names', 'colors', 'colorSpecie'));
     }
 
     public function update(Specie $specie){
