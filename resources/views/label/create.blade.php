@@ -39,14 +39,12 @@
         </div>
         <div class="col-sm-4">
             <div class="panel-body">
-                
-                    <div class="input-group">
-                        <input type="search" class="form-control" placeholder="Search" id="searchInput" onchange="filter()">
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-template-main" onclick="filter()"><i class="fa fa-search"></i></button>
-		                </span>
-                    </div>
-
+                <div class="input-group">
+                    <input type="search" class="form-control" placeholder="Search" id="searchInput" onchange="filter()">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-template-main" onclick="filter()"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
             </div>
         </div>
     </div>
@@ -55,7 +53,7 @@
         @foreach($species as $specie)
             <div class="col-xs-6 col-md-3" style="">
                 <div class="form-group">
-                    <label for="{{$specie->name.$specie->id}}">{{$specie->name}}</label>
+                    <label for="{{$specie->name.$specie->id}}">{{$specie->gender->name}} {{$specie->name}}</label>
                     <input type="checkbox" name="{{$specie->id}}" id="{{$specie->name.$specie->id}}" value="1"><br>
                 </div>
             </div>

@@ -20,15 +20,5 @@ class LabelSpeciesTableSeeder extends Seeder
         	'specie_id'=>2,
             'label_id'=>2
         ]);
-
-        DB::table('label_specie')->insert([
-        	'specie_id'=>2,
-            'label_id'=>2
-        ]);
-
-        DB::table('label_specie')->insert([
-        	'specie_id'=>2,
-            'label_id'=>2
-        ]);
     }
 }

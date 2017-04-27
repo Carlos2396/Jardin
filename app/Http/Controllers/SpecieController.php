@@ -93,8 +93,10 @@ class SpecieController extends Controller
             //aqui va lo de crear imagen
             $request = request('img'.$i);
             $ext = $request->getClientOriginalExtension();
-            $imageName=$specie->gender->name.$specie->name.'_'.$i;
-            
+            if($i==0)
+                $imageName=$specie->gender->name.$specie->name.'Principal';
+            else
+                $imageName=$specie->gender->name.$specie->name.$i;
             $request->move(public_path("img\species"), $imageName.'.'.$ext);
 
             Image::create([
@@ -131,5 +133,52 @@ class SpecieController extends Controller
     public function deleteSpecie(Specie $specie){
         $specie->delete();
         return redirect('/editar');
+    }
+
+    public function filter(){
+        $classes = Clase::all()->sortBy('name');
+        $orders = Order::all()->sortBy('name');
+        $families = Family::all()->sortBy('name');
+        $genders = Gender::all()->sortBy('name');
+        $colors = Color::all()->sortBy('name');
+        $labels = Label::all()->sortBy('name');
+        $species = Specie::all();
+
+        if(request('gender') != 0){
+            $species = $species->where('gender_id', request('gender'));
+        }
+
+        $array = array();
+        $counter = 0;
+
+        //Etiquetas
+        foreach($labels as $label){
+            if( request('label_'.$label->id) ){
+                $counter++;
+                foreach($label->species as $specie){
+                    if(!in_array($specie->id, $array))
+                        array_push($array, $specie->id);
+                }
+            }  
+        }
+        if($counter > 0)
+            $species = $species->whereIn('id', $array);
+
+        //Colores
+        $array = array();
+        $counter = 0;
+        foreach($colors as $color){
+            if( request('color_'.$color->id) ){
+                $counter++;
+                foreach($color->species as $specie){
+                    if(!in_array($specie->id, $array))
+                        array_push($array, $specie->id);
+                }
+            }  
+        }
+        if($counter > 0)
+            $species = $species->whereIn('id', $array);
+
+        return view('specie.index', compact('classes' ,'orders', 'families', 'genders', 'species', 'colors', 'labels'));
     }
 }

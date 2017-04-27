@@ -23,7 +23,7 @@ class OrderController extends Controller
         Order::create([
             'name' => request('name'),
             'description'=> request('description'),
-            'class_id' => request('class')
+            'clase_id' => request('class')
         ]);
 
         return redirect('/crear');        

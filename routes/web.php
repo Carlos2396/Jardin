@@ -1,11 +1,13 @@
 <?php
 
 Route::get('/', function() {
-    return redirect('/especies');
+    return view('inicio');
 });
 
 Route::get('/especies', 'SpecieController@index');
 Route::get('/especies/{specie}', 'SpecieController@show');
+Route::post('/especies', 'SpecieController@filter');
+Route::get('logout', 'AdminController@logout');
 
 Route::group(['middleware'=>'auth'], function() {
     Route::post('/clases/crear', 'ClaseController@store');
@@ -49,5 +51,3 @@ Route::group(['middleware'=>'auth'], function() {
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index');

@@ -17,7 +17,7 @@ Crear
                 var child = children[i].firstElementChild.innerHTML.toLowerCase();
 
                 if(child.includes(input)){
-                    children[i].style.display = "inline";
+                    children[i].style.display = "";
                     count++;
                 }
                 else{
