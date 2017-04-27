@@ -1,10 +1,11 @@
 <div class="col-sm-3" id="sidebar">
-    <form>
+    <form action="/especies" method="POST">
+    {{ csrf_field() }}
         <div class="panel-body">
             <div class="input-group">
-                <input type="search" class="form-control" placeholder="Search" id="searchInput" onchange="filter()">
+                <input type="search" class="form-control" placeholder="Search" id="searchInput">
                 <span class="input-group-btn">
-                    <button type="button" class="btn btn-template-main" onclick="filter()"><i class="fa fa-search"></i></button>
+                    <button type="button" class="btn btn-template-main"><i class="fa fa-search"></i></button>
                 </span>
             </div>
         </div>
@@ -81,13 +82,13 @@
                 <h3 class="panel-title clearfix">Colores</h3>
             </div>
             <div class="panel-body">
-                    @foreach($colors as $color)
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> <span class="colour" style="background: {{$color->rgb}};"></span> {{$color->name}}
-                            </label>
-                        </div>
-                    @endforeach
+                @foreach($colors as $color)
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="color_{{$color->id}}"> <span class="colour" style="background: {{$color->rgb}};"></span> {{$color->name}}
+                        </label>
+                    </div>
+                @endforeach
             </div>
         </div>
         <div class="text-center">

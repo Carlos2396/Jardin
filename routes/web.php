@@ -6,6 +6,7 @@ Route::get('/', function() {
 
 Route::get('/especies', 'SpecieController@index');
 Route::get('/especies/{specie}', 'SpecieController@show');
+Route::post('/especies', 'SpecieController@filter');
 Route::get('logout', 'AdminController@logout');
 
 Route::group(['middleware'=>'auth'], function() {
