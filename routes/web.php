@@ -37,10 +37,12 @@ Route::group(['middleware'=>'auth'], function() {
     Route::post('/colores/crear', 'ColorController@store');
     Route::get('/editar/color/{color}', 'ColorController@edit');
     Route::post('/editar/color/{color}', 'ColorController@update');
+    Route::get('/eliminar/color/{color}', 'ColorController@deleteColor');
 
     Route::post('/etiquetas/crear', 'LabelController@store');
     Route::get('/editar/etiqueta/{label}', 'LabelController@edit');
     Route::post('/editar/etiqueta/{label}', 'LabelController@update');
+    Route::get('/eliminar/etiqueta/{label}', 'LabelController@deleteLabel');
 
     Route::get('/crear', 'AdminController@create');
     Route::get('/editar', 'AdminController@edit');

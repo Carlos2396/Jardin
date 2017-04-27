@@ -47,8 +47,6 @@ class OrderController extends Controller
     }
 
     public function deleteOrder(Order $order){
-        
-        dd($order);
         $order->delete();
         return redirect('/editar');
     }
