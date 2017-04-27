@@ -6,100 +6,168 @@ Jardín Etnobotánico Franciso Peláez R. - Herbario
 
 @section('content')
     <div class="col-md-12&nbsp;">
-        <h3>Nombre científico de la especie</h3>
-        <p class="lead">Descripción de la planta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus ut elit a cursus. Ut eleifend imperdiet nisi in ultricies. Morbi euismod sed lectus ut tincidunt. Etiam ultrices sem sed lacus hendrerit, id venenatis lacus accumsan. Donec non sapien sed augue commodo interdum. Donec accumsan ex ut urna condimentum, vel venenatis felis tincidunt. Ut felis ante, blandit vel mi et, iaculis accumsan nisi. Nulla orci erat, ornare eu finibus vitae, tincidunt eu tortor. Nulla posuere nisl leo, eget vulputate ante mollis a.
-        </p>
-    </div>
+        <div class="panel-group accordion" id="accordionThree">
 
-    <div class="col-md-12">
-        <div class="row" id="productMain">
-            <div class="col-sm-5">
-                <div class="col-sm-12">
-                    <div id="mainImage">
-                        <img src="img/detailbig1.jpg" alt="" class="img-responsive">
-                    </div>
-
-                    <div class="ribbon sale">
-                        <div class="theribbon">SALE</div>
-                        <div class="ribbon-background"></div>
-                    </div>
-                    <!-- /.ribbon -->
-
-                    <div class="ribbon new">
-                        <div class="theribbon">NEW</div>
-                        <div class="ribbon-background"></div>
-                    </div>
-                    <!-- /.ribbon -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordionThree" href="#clase">
+                                Clase: {{$specie->gender->family->order->clase->name}}
+                            </a>
+                        </h4>
                 </div>
-                <div class="col-sm-12">
-                    <div class="row" id="thumbs">
-                        <div class="col-xs-4">
-                            <a href="img/detailbig1.jpg" class="thumb">
-                                <img src="img/detailsquare.jpg" alt="" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="col-xs-4">
-                            <a href="img/detailbig2.jpg" class="thumb">
-                                <img src="img/detailsquare2.jpg" alt="" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="col-xs-4">
-                            <a href="img/detailbig3.jpg" class="thumb">
-                                <img src="img/detailsquare3.jpg" alt="" class="img-responsive">
-                            </a>
+                <div id="clase" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1"> <p class="lead">{{$specie->gender->family->order->clase->description}}</p></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-7">
-                <div class="box">
-                    <h4>Nombres comúnes:</h4>
-                    <ul>
-                        <li>Polyester</li>
-                        <li>Machine wash</li>
-                    </ul>
-                    
-                    <div class="sizes">
 
-                        <h4>Colores disponibles</h4>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordionThree" href="#order">
+                                Orden: {{$specie->gender->family->order->name}}
+                            </a>
+                        </h4>
+                </div>
+                <div id="order" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1"> <p class="lead"> {{$specie->gender->family->order->description}} </p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                        <label for="size_s">
-                            <a href="#">S</a>
-                            <input type="radio" id="size_s" name="size" value="s" class="size-input">
-                        </label>
-                        <label for="size_m">
-                            <a href="#">M</a>
-                            <input type="radio" id="size_m" name="size" value="m" class="size-input">
-                        </label>
-                        <label for="size_l">
-                            <a href="#">L</a>
-                            <input type="radio" id="size_l" name="size" value="l" class="size-input">
-                        </label>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordionThree" href="#family">
+                                Familia: {{$specie->gender->family->name}}
+                            </a>
+                        </h4>
+                </div>
+                <div id="family" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                           <div class="col-md-10 col-md-offset-1"> <p class="lead"> {{$specie->gender->family->description}} </p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordionThree" href="#gender">
+                                Género: {{$specie->gender->name}}
+                            </a>
+                        </h4>
+                </div>
+                <div id="gender" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                           <div class="col-md-10 col-md-offset-1"> <p class="lead">{{$specie->gender->description}} </p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>{{$specie->gender->name.' '.$specie->name}}</h3>
+        <p class="lead">{{$specie->description}}</p>
+    </div>
+
+    <div class="col-md-12">
+        <div class="row" id="productMain">
+
+            <div class="col-sm-5">
+                <div class="col-sm-12">
+                    <div id="mainImage">
+                        <img src={{ asset("img/species/" . $specie->gender->name . $specie->name . "1.jpg")}} alt="" class="img-responsive">
                     </div>
 
-                    <p class="price">$124.00</p>
+                    @foreach($specie->labels as $label)
+                        <div class="ribbon sale">
+                            <div class="theribbon">{{$label->name}}</div>
+                            <div class="ribbon-background"></div>
+                        </div>
+                    @endforeach
+                    <!-- /.ribbon -->
+                </div>
+                <div class="col-sm-12">
+                    <div class="row" id="thumbs">
+                    <?php for($i=1; $i <= $specie->images->count()-1; $i++){ ?>
+                            <div class="col-xs-4">
+                                <a href="http://localhost:8000/img/species/{{$specie->gender->name}}{{$specie->name}}{{$i}}.jpg" class="thumb">
+                                    <img src={{ asset("img/species/" . $specie->gender->name . $specie->name . $i . ".jpg")}} alt="" class="img-responsive">
+                                </a>
+                            </div>
+                    <?php } ?>
+                    </div>
+                </div>
+            </div>
 
-                    <h4>Información de la especie</h4>
-                    <p>White lace top, woven, has a round neck, short sleeves, has knitted lining attached</p>
+            <div class="col-sm-7">
+                <div class="box">
 
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h4>Nombres comúnes</h4>
+                            <ul>
+                                @foreach($specie->names as $name)
+                                    <li>{{$name->name}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-5">
+                            <h4>Inventario</h4>
+                                <div class="table-responsive">
+                                    <table class="table table-hover" id="colorsTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Color</th>
+                                                <th></th>
+                                                <th>Cantidad</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($specie->colors as $color)
+                                                <tr>
+                                                    <td>{{$color->name}}</td>
+                                                    <td><input type="color" style="width: 50px;" value="{{$color->rgb}}" disabled></td>
+                                                    <td>{{$color->pivot->quantity}}</td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <h4>Precio</h4>
+                            <p class="price">${{$specie->price}}</p>
+                        </div>
+                    </div>
+                    
                     <h4>Cuidados de agua</h4>
-                    <ul>
-                        <li>Polyester</li>
-                        <li>Machine wash</li>
-                    </ul>
+                    <p>{{$specie->gender->water_care}}</p>
+                    <br>
 
                     <h4>Cuidados de temperatura</h4>
-                    <ul>
-                        <li>Regular fit</li>
-                        <li>The model (height 5'8" and chest 33") is wearing a size S</li>
-                    </ul>
+                    <p>{{$specie->gender->temp_care}}</p>
+                    <br>
 
                     <h4>Cuidados de luz</h4>
-                    <p>White lace top, woven, has a round neck, short sleeves, has knitted lining attached</p>
+                    <p>{{$specie->gender->light_care}}</p>
                     <br>
+                    
                     <blockquote>
-                        <p><em>Cuidados especiales de la especie: </em> Esta especie ...
+                        <p><em>Cuidados especiales de la especie: </em> <p>{{$specie->especial_care}}</p>
                         </p>
                     </blockquote>
                 </div>

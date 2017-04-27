@@ -53,7 +53,7 @@
         @foreach($species as $specie)
             <div class="col-xs-6 col-md-3" style="">
                 <div class="form-group">
-                    <label for="{{$specie->name.$specie->id}}">{{$specie->name}}</label>
+                    <label for="{{$specie->name.$specie->id}}">{{$specie->gender->name}} {{$specie->name}}</label>
                     <input type="checkbox" name="{{$specie->id}}" id="{{$specie->name.$specie->id}}" value="1"><br>
                 </div>
             </div>
