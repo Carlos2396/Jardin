@@ -52,4 +52,8 @@ class GenderController extends Controller
         return redirect('/editar');   
     }
 
+    public function deleteGender(Gender $gender){
+        $gender->delete();
+        return redirect('/editar');
+    }
 }

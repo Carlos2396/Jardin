@@ -30,7 +30,7 @@
                         <tr>
                             <td>{{$family->name}}</td>
                             <td><a href="/editar/familia/{{$family->id}}"><button type="button" class="btn btn-xs btn-info" >Editar</button></a></td>
-                            <td><a href="/eliminar/familio/{{$family->id}}>"<button type="button" class="btn btn-xs btn-danger">Eliminar</button></a></td>
+                            <td><a href="/eliminar/familia/{{$family->id}}"><button type="button" class="btn btn-xs btn-danger">Eliminar</button></a></td>
                         </tr>
                     @endforeach
                 </tbody>

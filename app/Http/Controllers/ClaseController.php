@@ -40,6 +40,11 @@ class ClaseController extends Controller
         $class->name=request('name');
         $class->description=request('description');
         $class->save();
-        return redirect('/editar');   
+        return redirect('/editar');
+    }
+
+    public function deleteClase(Clase $class){
+        $class->delete();
+        return redirect('/editar');
     }
 }

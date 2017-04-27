@@ -17,10 +17,10 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('description');
-            $table->integer('class_id')->unsigned();
+            $table->integer('clase_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('class_id')->references('id')->on('classes')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('clase_id')->references('id')->on('clases')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

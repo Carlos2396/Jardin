@@ -17,4 +17,5 @@ class Gender extends Model
     public function species(){
         return $this->hasMany(Specie::class);
     }
+
 }

@@ -45,4 +45,11 @@ class OrderController extends Controller
         $order->save();
         return redirect('/editar');   
     }
+
+    public function deleteOrder(Order $order){
+        
+        dd($order);
+        $order->delete();
+        return redirect('/editar');
+    }
 }

@@ -35,30 +35,4 @@ class Specie extends Model
         return $this->belongsToMany(Color::class);
     }
 
-    public function deleteSpecie(){
-        $labelSpecies=LabelSpecie::all();
-        $colorSpecies=ColorSpecie::all();
-        $images=Image::all();
-        $names=Name::all();
-        foreach($labelSpecies as $labelSpecie){
-            if($labelSpecie->specie_id==$this->id){
-                $labelSpecie->delete();
-            }
-        }
-        foreach($colorSpecies as $colorSpecie){
-            if($colorSpecie->specie_id==$this->id){
-                $colorSpecie->delete();
-            }
-        }
-        foreach($images as $image){
-            if($image->specie_id==$this->id){
-                $image->delete();
-            }
-        }
-        foreach($names as $name){
-            if($name->specie_id==$this->id){
-                $name->delete();
-            }
-        }
-    }
 }

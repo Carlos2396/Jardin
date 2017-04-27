@@ -129,7 +129,6 @@ class SpecieController extends Controller
     }
 
     public function deleteSpecie(Specie $specie){
-        $specie->deleteSpecie();
         $specie->delete();
         return redirect('/editar');
     }
