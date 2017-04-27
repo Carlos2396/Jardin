@@ -72,6 +72,10 @@
         nameCount++;
     }
 
+    function countColors(){
+        colorCount++;
+    }
+
 </script>
 
 <form action="/especies/crear" method="POST">
@@ -170,17 +174,45 @@
                             </tr>
                         </thead>
                         <tbody>
-                             <tr>
-                                <td>
-                                    <select class="form-control" id="colorsSelect" name="color_0">
-                                        <option value="0">Selecciona</option>
-                                        @foreach($colors as $color)
-                                            <option value="{{$color->id}}" style="color: {{$color->rgb}}  background-color:#cccccc;">{{$color->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </td>
-                                <td><input type="number" step="1" min="0" max="10000" class="form-control" style="width: 110px;" name="quantity_0" required></td>
-                            </tr>
+                            @if(sizeof($colorSpecie)<1)
+                                <tr>
+                                    <td>
+                                        <select class="form-control" id="colorsSelect" name="color_0">
+                                            <option value="0" selected>Selecciona</option>
+                                            @foreach($colors as $color)
+                                                <option value="{{$color->id}}" style="color: {{$color->rgb}}  background-color:#cccccc;">{{$color->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="number" step="1" min="0" max="10000" class="form-control" style="width: 110px;" name="quantity_0" required>
+                                    </td>
+                                </tr>
+                                <script>countColors();</script>
+                            @else
+                                @foreach($colorSpecie as $index => $colorSp)
+                                    @if($colorSp->specie_id == $specie->id)
+                                        <tr>
+                                            <td>
+                                                <select class="form-control" id="colorsSelect" name="color_{{$index}}">
+                                                    <option value="0">Selecciona</option>
+                                                    @foreach($colors as $color)
+                                                        @if($color->id == $colorSp->color_id)
+                                                            <option value="{{$color->id}}" style="color: {{$color->rgb}}  background-color:#cccccc;" selected>{{$color->name}}</option>
+                                                        @else
+                                                            <option value="{{$color->id}}" style="color: {{$color->rgb}}  background-color:#cccccc;">{{$color->name}}</option>
+                                                        @endif
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="number" step="1" min="0" max="10000" class="form-control" style="width: 110px;" name="quantity_{{$index}}" value="{{$colorSp->quantity}}" required>
+                                            </td>
+                                        </tr>
+                                        <script>countColors();</script>
+                                    @endif
+                                @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>
