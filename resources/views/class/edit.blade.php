@@ -5,8 +5,20 @@
 @endsection
 
 @section('content')
+    <script>
+        var form = get.documentById('classForm');
 
-    <form action="/editar/clase/{{$class->id}}" method="POST">
+        function check(){
+            if (confirm("Press a button!") == true) {
+                
+            } else {
+                form.method = "GET";
+                form.action = "/editar";
+            }
+        }
+    </script>
+
+    <form action="/editar/clase/{{$class->id}}" method="POST" id="classForm")>
         {{ csrf_field() }}
 
         <div class="form-group">

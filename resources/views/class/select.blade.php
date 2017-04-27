@@ -1,3 +1,23 @@
+<script>
+    var link = get.documentById('deleteClass');
+
+    function check(){
+        $(document).ready(function() {
+            $('a').click(function(event) {
+                var id = $(this).prop('id');
+                if (id == 'deleteClass') {
+                    if(!confirm("just Alert HUlk"))
+                        event.preventDefault();
+                    
+                    //i want to prevent
+                } else {
+                    //redirect
+                }
+            });
+        });
+    }
+</script>
+
 <div class="row">
     <div class="col-sm-4">
         <form>
@@ -26,11 +46,15 @@
                     </tr>
                 </thead>
                 <tbody id="classTable">
+                <?php
+                    $species = App\Specie::all();
+                    dd($species);
+                ?>
                     @foreach($classes as $clase)
                         <tr>
                             <td>{{$clase->name}}</td>
                             <td><a href="/editar/clase/{{$clase->id}}"><button type="button" class="btn btn-xs btn-info" >Editar</button></a></td>
-                            <td><a href="/eliminar/clase/{{$clase->id}}"><button type="button" class="btn btn-xs btn-danger">Eliminar</button></a></td>
+                            <td><a href="/eliminar/clase/{{$clase->id}}" id="deleteClass"><button type="button" class="btn btn-xs btn-danger" onclick="check()">Eliminar</button></a></td>
                         </tr>
                     @endforeach
                 </tbody>
