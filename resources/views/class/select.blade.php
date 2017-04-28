@@ -1,20 +1,3 @@
-
-<script>
-    function check(x){
-        $(document).ready(function() {
-            $('a').click(function(event) {
-                var id = $(this).prop('id');
-                if (id == 'deleteClase') {
-                    if(!confirm("Se eliminará(n) "+x+" entidad(es), está seguro de que desea continuar")){
-                        event.preventDefault();
-                        location.reload();
-                    }
-                }
-            });
-        });
-    }
-</script>
-
 <div class="row">
     <div class="col-sm-4">
         <form>
