@@ -24,7 +24,7 @@ class FamilyController extends Controller
             'description'=> request('description'),
             'order_id' => request('order')
         ]);
-
+        session()->flash('message', 'Familia creada correctamente'); 
         return redirect('/crear');        
     }
 

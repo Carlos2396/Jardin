@@ -23,7 +23,7 @@ class ClaseController extends Controller
             'name' => request('name'),
             'description'=> request('description'),
         ]);
-
+        session()->flash('message', 'Clase creada correctamente');
         return redirect('/crear');        
     }
     

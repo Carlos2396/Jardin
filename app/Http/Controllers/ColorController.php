@@ -17,7 +17,7 @@ class ColorController extends Controller
             'name' => request('name'),
             'rgb' => request('color')
         ]);
-
+        session()->flash('message', 'Color creado correctamente');
         return redirect('/crear');
      }
 

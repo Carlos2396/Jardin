@@ -25,7 +25,7 @@ class SpecieController extends Controller
         $species = Specie::all()->sortBy('name');
         $colors = Color::all()->sortBy('name');
         $labels = Label::all()->sortBy('name');
-
+        session()->flash('message', 'Especie creada correctamente');
         return view('specie.index', compact('classes' ,'orders', 'families', 'genders', 'species', 'colors', 'labels'));
     }
 

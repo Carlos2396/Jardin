@@ -25,7 +25,7 @@ class GenderController extends Controller
             'name' => request('name'),
             'family_id' => request('family')
         ]);
-
+        session()->flash('message', 'Genero creado correctamente');
         return redirect('/crear');        
     }
 

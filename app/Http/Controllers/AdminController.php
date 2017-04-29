@@ -14,6 +14,7 @@ use App\Label;
 class AdminController extends Controller
 {
     function create() {
+        
         $classes = Clase::all()->sortBy('name');
         $orders = Order::all()->sortBy('name');
         $families = Family::all()->sortBy('name');

@@ -26,7 +26,7 @@ class LabelController extends Controller
                 ]);
             }
         }
-
+        session()->flash('message', 'Etiqueta creada correctamente');
         return redirect('/crear');
     }
 

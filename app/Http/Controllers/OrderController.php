@@ -25,7 +25,7 @@ class OrderController extends Controller
             'description'=> request('description'),
             'clase_id' => request('class')
         ]);
-
+        session()->flash('message', 'Orden creado correctamente');
         return redirect('/crear');        
     }
 
