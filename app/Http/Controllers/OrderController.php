@@ -30,8 +30,8 @@ class OrderController extends Controller
     }
 
      public function edit(Order $order){
-        $classes = Clase::all();
-        return view('order.edit', compact('classes', 'order'));
+        $clases = Clase::all();
+        return view('order.edit', compact('clases', 'order'));
     }
 
     public function update(Order $order){
@@ -41,8 +41,9 @@ class OrderController extends Controller
         ]);
         $order->name=request('name');
         $order->description= request('description');
-        $order->class_id = request('class');
+        $order->clase_id = request('clase');
         $order->save();
+        session()->flash('message', 'Orden guardado correctamente');
         return redirect('/editar');   
     }
 

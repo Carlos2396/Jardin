@@ -130,6 +130,7 @@ class SpecieController extends Controller
         $specie->price = request('price');
         $specie->gender_id= request('gender');
         $specie->save();
+        session()->flash('message', 'Especie guardada correctamente');
         return redirect('/editar');   
     }
 

@@ -49,6 +49,7 @@ class GenderController extends Controller
         $gender->temp_care = request('temp_care');
         $gender->family_id = request('family');
         $gender->save();
+        session()->flash('message', 'Genero guardado correctamente');
         return redirect('/editar');   
     }
 

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Editar clase
+    Editar genero
 @endsection
 @include('layouts.errors')
 @section('content')

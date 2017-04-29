@@ -57,6 +57,7 @@ class LabelController extends Controller
                 }
             }
         }
+        session()->flash('message', 'Etiqueta guardada correctamente');
         return redirect('/editar');   
     }
 

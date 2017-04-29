@@ -40,6 +40,7 @@ class ClaseController extends Controller
         $class->name=request('name');
         $class->description=request('description');
         $class->save();
+        session()->flash('message', 'Clase guardada correctamente');
         return redirect('/editar');
     }
 
