@@ -8,7 +8,7 @@
 
     @include('specie.sidebar')
 
-    <div class="col-sm-9">
+    <div class="col-md-9 col-sm-9">
     <p class="text-muted lead">Nuestro herbario de especies es propio de la región de Cholula en Puebla, contamos con más de 100 especies ...</p>
         @include('specie.list')
     </div>

@@ -10,6 +10,7 @@ Route::get('/filter', 'SpecieController@filter');
 Route::get('/order_options', 'OrderController@options');
 Route::get('/family_options', 'FamilyController@options');
 Route::get('/gender_options', 'GenderController@options');
+Route::get('/search', 'SpecieController@search');
 
 Route::get('logout', 'AdminController@logout');
 

@@ -61,24 +61,9 @@ class GenderController extends Controller
     }
 
     public function options(){
-        if( request('class') != null){
-            if( (int)request('class') > 0){
-                $class = Clase::find((int)request('class'));
-                $elements = collect();
-                foreach($class->orders as $order)
-                    foreach($order->families as $family)
-                        foreach($family->genders as $gender)
-                            if(!$elements->contains($gender))
-                                $elements->push($gender);
-            }
-            else
-                $elements = Gender::all();
-
-            $elements = $elements->sortBy('name');
-            return view('layouts.select_content', compact('elements'))->render();
-        }
-
-        if( request('order') != null){
+        if((int)request('family') > 0)
+            $elements = Family::find((int)request('family'))->genders;
+        else
             if( (int)request('order') > 0){
                 $order = Order::find((int)request('order'));
                 $elements = collect();
@@ -87,21 +72,21 @@ class GenderController extends Controller
                         if(!$elements->contains($gender))
                             $elements->push($gender);
             }  
-            else
-                $elements = Gender::all();
+            else{
+                if( (int)request('class') > 0){
+                    $class = Clase::find((int)request('class'));
+                    $elements = collect();
+                    foreach($class->orders as $order)
+                        foreach($order->families as $family)
+                            foreach($family->genders as $gender)
+                                if(!$elements->contains($gender))
+                                    $elements->push($gender);
+                }
+                else
+                    $elements = Gender::all();
+            }
 
-            $elements = $elements->sortBy('name');
-            return view('layouts.select_content', compact('elements'))->render();
-        }
-
-        if( request('family') != null){
-            if((int)request('family') > 0)
-                $elements = Family::find((int)request('family'))->genders;
-            else
-                $elements = Gender::all();
-
-            $elements = $elements->sortBy('name');
-            return view('layouts.select_content', compact('elements'))->render();
-        }
+        $elements = $elements->sortBy('name');
+        return view('layouts.select_content', compact('elements'))->render();
     }
 }
