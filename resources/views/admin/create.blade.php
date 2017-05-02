@@ -6,6 +6,12 @@ Crear
 
 @section('content')
     <div class="tabs">
+        @if($flash=session('message'))
+            <div class="alert alert-success" role="alert">
+                    {{$flash}}
+            </div>
+        @endif
+
         <ul class="nav nav-pills nav-justified">
             <li class="active"><a href="#clase" data-toggle="tab">Clase</a>
             </li>

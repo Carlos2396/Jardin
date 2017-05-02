@@ -25,7 +25,7 @@ class GenderController extends Controller
             'name' => request('name'),
             'family_id' => request('family')
         ]);
-
+        session()->flash('message', 'Genero creado correctamente');
         return redirect('/crear');        
     }
 
@@ -49,6 +49,7 @@ class GenderController extends Controller
         $gender->temp_care = request('temp_care');
         $gender->family_id = request('family');
         $gender->save();
+        session()->flash('message', 'Genero guardado correctamente');
         return redirect('/editar');   
     }
 

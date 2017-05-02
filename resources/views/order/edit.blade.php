@@ -1,22 +1,22 @@
 @extends('layouts.master')
 
 @section('title')
-    Editar clase
+    Editar Orden
 @endsection
-
+@include('layouts.errors')
 @section('content')
 <form action="/editar/orden/{{$order->id}}" method="POST">
     {{ csrf_field() }}
 
     <div class="form-group">
         <label>Clase
-            <select class="form-control" id="class" name="class">
+            <select class="form-control" id="clase" name="clase">
             <option value="0">Selecciona</option>
-                @foreach($classes as $class)
-                    @if($class->id==$order->class_id)
-                        <option value="{{$class->id}}" selected>{{$class->name}}</option>
+                @foreach($clases as $clase)
+                    @if($clase->id==$order->clase_id)
+                        <option value="{{$clase->id}}" selected>{{$clase->name}}</option>
                     @else
-                        <option value="{{$class->id}}">{{$class->name}}</option>
+                        <option value="{{$clase->id}}">{{$clase->name}}</option>
                     @endif
                 @endforeach
             </select>

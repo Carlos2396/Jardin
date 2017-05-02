@@ -32,7 +32,7 @@
                             <td>{{$color->name}}</td>
                             <td><input type="color" class="form-control" style="width: 60px;"  id="color" name="color" value="{{$color->rgb}}" disabled=true ></td>
                             <td><a href="/editar/color/{{$color->id}}"><button type="button" class="btn btn-xs btn-info" >Editar</button></a></td>
-                            <td><a href="/eliminar/color/{{$color->id}}"><button type="button" class="btn btn-xs btn-danger">Eliminar</button></a></td>
+                            <td><a href="/eliminar/color/{{$color->id}}" id="deleteColor"><button type="button" class="btn btn-xs btn-danger" onclick="check({{$color->entityCount()}})">Eliminar</button></a></td>
                         </tr>
                     @endforeach
                 </tbody>

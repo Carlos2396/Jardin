@@ -1,4 +1,4 @@
-
+@include('layouts.errors')
 <form action="/colores/crear" method="POST">
     {{ csrf_field() }}
 

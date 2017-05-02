@@ -24,7 +24,7 @@ class FamilyController extends Controller
             'description'=> request('description'),
             'order_id' => request('order')
         ]);
-
+        session()->flash('message', 'Familia creada correctamente'); 
         return redirect('/crear');        
     }
 
@@ -42,6 +42,7 @@ class FamilyController extends Controller
         $family->description=request('description');
         $family->order_id=request('order');
         $family->save();
+        session()->flash('message', 'Familia guardada correctamente');
         return redirect('/editar');   
     }
 

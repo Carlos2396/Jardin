@@ -1,3 +1,4 @@
+@include('layouts.errors')
 <script>
     function filter(){
         var input = document.getElementById("searchInput").value.toLowerCase();

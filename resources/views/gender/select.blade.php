@@ -30,7 +30,7 @@
                         <tr>
                             <td>{{$gender->name}}</td>
                             <td><a href="/editar/genero/{{$gender->id}}"><button type="button" class="btn btn-xs btn-info" >Editar</button></a></td>
-                            <td><a href="/eliminar/genero/{{$gender->id}}"><button type="button" class="btn btn-xs btn-danger">Eliminar</button></a></td>
+                            <td><a href="/eliminar/genero/{{$gender->id}}" id="deleteGender"><button type="button" class="btn btn-xs btn-danger" onclick="check({{$gender->entityCount()}})">Eliminar</button></a></td>
                         </tr>
                     @endforeach
                 </tbody>

@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
 @section('title')
-    Editar clase
+    Editar familia
 @endsection
-
+@include('layouts.errors')
 @section('content')
 
 <form action="/editar/familia/{{$family->id}}" method="POST">

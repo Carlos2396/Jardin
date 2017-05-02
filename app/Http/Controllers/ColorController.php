@@ -17,7 +17,7 @@ class ColorController extends Controller
             'name' => request('name'),
             'rgb' => request('color')
         ]);
-
+        session()->flash('message', 'Color creado correctamente');
         return redirect('/crear');
      }
 
@@ -33,6 +33,7 @@ class ColorController extends Controller
         $color->name=request('name');
         $color->rgb=request('color');
         $color->save();
+        session()->flash('message', 'Color guardado correctamente');
         return redirect('/editar');   
     }
 

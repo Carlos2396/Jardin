@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Gender;
+use App\Order;
 
 
 class Clase extends Model
@@ -14,4 +14,13 @@ class Clase extends Model
         return $this->hasMany(Order::class);
     }
 
+    public function entityCount(){
+        $x=1;
+        $orders=$this->orders;
+        foreach($orders as $order){
+            $x+=$order->entityCount();
+            $x++;
+        }
+        return $x;
+    }
 }

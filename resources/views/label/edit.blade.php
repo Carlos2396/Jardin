@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
 @section('title')
-    Editar clase
+    Editar etiqueta
 @endsection
-
+@include('layouts.errors')
 @section('content')
 <script>
     function filter(){

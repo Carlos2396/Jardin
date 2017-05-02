@@ -26,7 +26,7 @@ class LabelController extends Controller
                 ]);
             }
         }
-
+        session()->flash('message', 'Etiqueta creada correctamente');
         return redirect('/crear');
     }
 
@@ -57,6 +57,7 @@ class LabelController extends Controller
                 }
             }
         }
+        session()->flash('message', 'Etiqueta guardada correctamente');
         return redirect('/editar');   
     }
 
