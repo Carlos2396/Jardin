@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Order;
 use App\Family;
+use App\Clase;
 
 class FamilyController extends Controller
 {
@@ -50,5 +51,33 @@ class FamilyController extends Controller
         
         $family->delete();
         return redirect('/editar');
+    }
+
+    public function options(){
+        if( request('class') != null){
+            if( (int)request('class') > 0){
+                $class = Clase::find((int)request('class'));
+                $elements = collect();
+                foreach($class->orders as $order)
+                    foreach($order->families as $family)
+                        if(!$elements->contains($family))
+                            $elements->push($family);
+            }  
+            else
+                $elements = Family::all();
+
+            $elements = $elements->sortBy('name');
+            return view('layouts.select_content', compact('elements'))->render();
+        }
+
+        if( request('order') != null){
+            if((int)request('order') > 0)
+                $elements = Order::find((int)request('order'))->families;
+            else
+                $elements = Order::all();
+
+            $elements = $elements->sortBy('name');
+            return view('layouts.select_content', compact('elements'))->render();
+        }
     }
 }

@@ -6,7 +6,11 @@ Route::get('/', function() {
 
 Route::get('/especies', 'SpecieController@index')->name('/home');
 Route::get('/especies/{specie}', 'SpecieController@show');
-Route::post('/especies', 'SpecieController@filter');
+Route::get('/filter', 'SpecieController@filter');
+Route::get('/order_options', 'OrderController@options');
+Route::get('/family_options', 'FamilyController@options');
+Route::get('/gender_options', 'GenderController@options');
+
 Route::get('logout', 'AdminController@logout');
 
 Route::group(['middleware'=>'auth'], function() {

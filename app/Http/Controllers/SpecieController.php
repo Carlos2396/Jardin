@@ -146,8 +146,9 @@ class SpecieController extends Controller
         $genders = Gender::all()->sortBy('name');
         $colors = Color::all()->sortBy('name');
         $labels = Label::all()->sortBy('name');
-        $species = Specie::all();
+        $species = Specie::all()->sortBy('name');
 
+        //Genders
         if(request('gender') != 0){
             $species = $species->where('gender_id', request('gender'));
         }
@@ -155,7 +156,7 @@ class SpecieController extends Controller
         $array = array();
         $counter = 0;
 
-        //Etiquetas
+        //Labels
         foreach($labels as $label){
             if( request('label_'.$label->id) ){
                 $counter++;
@@ -168,7 +169,7 @@ class SpecieController extends Controller
         if($counter > 0)
             $species = $species->whereIn('id', $array);
 
-        //Colores
+        //Colors
         $array = array();
         $counter = 0;
         foreach($colors as $color){
@@ -182,7 +183,9 @@ class SpecieController extends Controller
         }
         if($counter > 0)
             $species = $species->whereIn('id', $array);
+        
+        $view = view('specie.list', compact('species'));
 
-        return view('specie.index', compact('classes' ,'orders', 'families', 'genders', 'species', 'colors', 'labels'));
+        return $view->render();
     }
 }

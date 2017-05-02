@@ -25,7 +25,7 @@
 
     <!-- Custom stylesheet - for your changes -->
     <link href={{ asset("css/custom.css")}} rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Responsivity for older IE -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Gender;
 use App\Family;
+use App\Order;
+use App\Clase;
 
 class GenderController extends Controller
 {
@@ -56,5 +58,50 @@ class GenderController extends Controller
     public function deleteGender(Gender $gender){
         $gender->delete();
         return redirect('/editar');
+    }
+
+    public function options(){
+        if( request('class') != null){
+            if( (int)request('class') > 0){
+                $class = Clase::find((int)request('class'));
+                $elements = collect();
+                foreach($class->orders as $order)
+                    foreach($order->families as $family)
+                        foreach($family->genders as $gender)
+                            if(!$elements->contains($gender))
+                                $elements->push($gender);
+            }
+            else
+                $elements = Gender::all();
+
+            $elements = $elements->sortBy('name');
+            return view('layouts.select_content', compact('elements'))->render();
+        }
+
+        if( request('order') != null){
+            if( (int)request('order') > 0){
+                $order = Order::find((int)request('order'));
+                $elements = collect();
+                foreach($order->families as $family)
+                    foreach($family->genders as $gender)
+                        if(!$elements->contains($gender))
+                            $elements->push($gender);
+            }  
+            else
+                $elements = Gender::all();
+
+            $elements = $elements->sortBy('name');
+            return view('layouts.select_content', compact('elements'))->render();
+        }
+
+        if( request('family') != null){
+            if((int)request('family') > 0)
+                $elements = Family::find((int)request('family'))->genders;
+            else
+                $elements = Gender::all();
+
+            $elements = $elements->sortBy('name');
+            return view('layouts.select_content', compact('elements'))->render();
+        }
     }
 }

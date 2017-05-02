@@ -9,7 +9,6 @@ use App\Clase;
 class OrderController extends Controller
 {
     public function create(){
-
         $orders = Order::all();
         return view('order.create');
     }
@@ -50,5 +49,15 @@ class OrderController extends Controller
     public function deleteOrder(Order $order){
         $order->delete();
         return redirect('/editar');
+    }
+
+    public function options(){
+        if((int)request('class') > 0)
+            $elements = Clase::find((int)request('class'))->orders;
+        else
+            $elements = Order::all();
+
+        $elements = $elements->sortBy('name');
+        return view('layouts.select_content', compact('elements'))->render();
     }
 }
