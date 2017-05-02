@@ -81,6 +81,14 @@ _________________________________________________________ -->
             </div>
         </section>
 
+        <div class="row">
+            <div class="col-md-12 banner">
+                <a href="#">
+                    <img src="img/banner2.jpg" alt="" class="img-responsive">
+                </a>
+            </div>
+        </div>
+
         <div id="get-it">
             <div class="container">
                 <div class="col-md-8 col-sm-12">
