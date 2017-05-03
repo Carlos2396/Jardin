@@ -213,7 +213,8 @@ class SpecieController extends Controller
         foreach($IDs as $id)
             if(!$species->contains($specie = Specie::find($id->id)))
                 $species->push($specie);
-
+        
+        $species->sortBy('name');
         $view = view('specie.list', compact('species'));
         return $view->render();
     }
@@ -225,6 +226,7 @@ class SpecieController extends Controller
             if(!$species->contains($specie = Specie::find($id->id)))
                 $species->push($specie);
 
+        $species->sortBy('name');
         $view = view('specie.list', compact('species'));
         return $view->render();
     }

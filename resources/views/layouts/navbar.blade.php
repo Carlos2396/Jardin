@@ -5,7 +5,7 @@
             <div class="navbar-header">
 
                 <a class="navbar-brand home" href="index.html">
-                    <img src={{ asset("img/logo.jpg")}} alt="Universal logo" class="hidden-xs hidden-sm">
+                    <img src={{ asset("img/logo.png")}} alt="Universal logo" class="hidden-xs hidden-sm">
                     <img src={{ asset("img/logo-small.jpg")}} alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Universal - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">

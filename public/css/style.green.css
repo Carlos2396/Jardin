@@ -1777,6 +1777,7 @@ fieldset[disabled] .btn-template-primary.active {
   background: url('../img/fixed-background-2.jpg') center top no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  height: 650px;
 }
 .bar.color-white h1,
 .bar.color-white h2,
