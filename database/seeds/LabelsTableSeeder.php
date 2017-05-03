@@ -26,5 +26,41 @@ class LabelsTableSeeder extends Seeder
          DB::table('labels')->insert([
         	'name'=>'40%'
         ]);
+
+         DB::table('labels')->insert([
+        	'name'=>'50%'
+        ]);
+
+         DB::table('labels')->insert([
+        	'name'=>'70%'
+        ]);
+
+         DB::table('labels')->insert([
+        	'name'=>'New!'
+        ]);
+
+         DB::table('labels')->insert([
+        	'name'=>'Fashion'
+        ]);
+
+         DB::table('labels')->insert([
+        	'name'=>'Remate'
+        ]);
+
+         DB::table('labels')->insert([
+        	'name'=>'Plantitas Bonis'
+        ]);
+
+         DB::table('labels')->insert([
+        	'name'=>'Plantitas Feas'
+        ]);
+
+         DB::table('labels')->insert([
+        	'name'=>'Nuevos Colores'
+        ]);
+
+         DB::table('labels')->insert([
+        	'name'=>'Nuevos Modelos'
+        ]);
     }
 }
