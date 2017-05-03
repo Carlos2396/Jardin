@@ -175,7 +175,7 @@ class SpeciesTableSeeder extends Seeder
         ]);
            
            DB::table('species')->insert([
-            'name'=>'Itoi ',
+            'name'=>'Itoi',
             'description' => 'Arbol muy bello y frondoso',
             'especial_care' => '',
             'price' => 60.00,
@@ -239,7 +239,7 @@ class SpeciesTableSeeder extends Seeder
         ]);
            
            DB::table('species')->insert([
-            'name'=>'Yunnanensis ',
+            'name'=>'Yunnanensis',
             'description' => ' Ideal para la casa como decoración.',
             'especial_care' => '',
             'price' => 20.00,

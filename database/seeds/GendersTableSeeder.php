@@ -36,7 +36,7 @@ class GendersTableSeeder extends Seeder
             'water_care' => 'Planta acuatica, requiere estar en un estanque',
             'light_care' => 'Planta de sol',
             'temp_care' => 'Al menos 30 grados',
-            'name' => 'Araucaria ',
+            'name' => 'Araucaria',
             'family_id' => 3
         ]);
 
