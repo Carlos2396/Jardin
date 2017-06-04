@@ -27,7 +27,6 @@ class SpecieController extends Controller
         $species = Specie::all()->sortBy('name');
         $allColors = Color::all()->sortBy('name');
         $allLabels = Label::all()->sortBy('name');
-        session()->flash('message', 'Especie creada correctamente');
 
         $colors = collect();
         //Only get colors asociated with at least one specie
@@ -122,6 +121,7 @@ class SpecieController extends Controller
                 'specie_id'=>$specie->id,
             ]);
         }
+        session()->flash('message', 'Especie creada correctamente');
 
         return redirect('/crear');
      }
