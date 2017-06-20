@@ -42,6 +42,7 @@ Route::group(['middleware'=>'auth'], function() {
     Route::get('/eliminar/especie/{specie}', 'SpecieController@deleteSpecie');
 
     Route::post('/colores/crear', 'ColorController@store');
+    HOLA
     Route::get('/editar/color/{color}', 'ColorController@edit');
     Route::post('/editar/color/{color}', 'ColorController@update');
     Route::get('/eliminar/color/{color}', 'ColorController@deleteColor');
